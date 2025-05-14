@@ -1,5 +1,5 @@
 .certSection {
-  background-color: #f5f5f5;
+  background-color: #e2e2e2;
   padding: 50px 20px;
   text-align: center;
 }
@@ -9,13 +9,14 @@
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 30px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .logoGrid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 100px;
   align-items: center;
 }
 

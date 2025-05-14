@@ -1,0 +1,70 @@
+.footer {
+  background-color: #003c7d; /* Color de fondo */
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.socialLinks a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.socialLinks a:hover {
+  color: #f5a623; /* Color de hover */
+}
+
+.footerLinks ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.footerLinks li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footerLinks a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footerLinks a:hover {
+  color: #f5a623;
+}
+
+.contactInfo p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footerBottom {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footerBottom p {
+  margin: 0;
+}
+
+.footer .whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  padding: 15px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
