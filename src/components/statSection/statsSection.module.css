@@ -1,0 +1,34 @@
+.statsSection {
+  background-color: #f57c00;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.statsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.statCard {
+  width: 250px;
+  color: #0d2f6d;
+}
+
+.icon {
+  font-size: 4.5rem;
+  margin-bottom: 10px;
+}
+
+.count {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.text {
+  margin-top: 5px;
+  font-size: 0.95rem;
+  color: #022139;
+}

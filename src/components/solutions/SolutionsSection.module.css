@@ -1,0 +1,62 @@
+/* src/components/SolutionsSection.module.css */
+
+.solutionsSection {
+  padding: 60px 20px;
+  background-color: #f6f9fc;
+  text-align: center;
+   font-family: 'Poppins', sans-serif;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0d2f6d;
+  margin-bottom: 10px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #2954a3;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background-color: rgba(185, 184, 184, 0.548);
+   border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.cardImage {
+   height: 140px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2954a3;
+  margin-bottom: 8px;
+}
+
+.cardText {
+    font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color:  #2954a3;
+  font-weight: 300;
+   line-height: 1.4;
+}
