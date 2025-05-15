@@ -38,7 +38,7 @@
 
 .content h1 {
   font-size: 2.5rem;
-  color: #0d4f93;
+  color: #115763;
   margin-bottom: 20px;
   font: bold;
   font-family: Arial, Helvetica, sans-serif;
@@ -47,20 +47,25 @@
 .content p {
   font-size: 1.5rem;
   margin-bottom: 30px;
-color: #0d4f93;
+color: #005f73;
    line-height: 1.6;
    font-family: Arial, Helvetica, sans-serif;
 }
 
 .button {
-  background-color: #f7941e;
+  background-color: #115763;
   color: white;
   padding: 18px 54px;
   font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: transform 0.3s ease;
   
+}
+
+.button:hover {
+  transform: scale(1.1); /* agranda el elemento un 10% */
 }
 
 .imageContainer {
@@ -70,7 +75,7 @@ color: #0d4f93;
 }
 
 .imageContainer img {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   object-fit: contain;
 }

@@ -7,6 +7,9 @@ import StatsSection from './components/statSection/statsSection'
 import Certificaciones from './components/certificaciones/Certificaciones'
 import Banner from './components/banner/Banner'
 import ButtonAgen from './components/buttonAgen/ButtonAgen'
+import Reviews from './components/reviews/Reviews'
+import BannerYT from './components/bannerYT/BannerYT'
+
 function App() {
 
 
@@ -16,9 +19,11 @@ function App() {
     <Navbar></Navbar>
     <HeroSection/>
     <Banner />
-    <ButtonAgen></ButtonAgen>
     <SolutionsSection />
     <StatsSection />
+    <ButtonAgen></ButtonAgen>
+    <BannerYT />
+    <Reviews />
     <Certificaciones />
     <Footer />
     </div>

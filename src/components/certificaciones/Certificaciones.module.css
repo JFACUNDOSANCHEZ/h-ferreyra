@@ -1,11 +1,13 @@
 .certSection {
-  background-color: #e2e2e2;
-  padding: 50px 20px;
+  background-color: #f9f9f9;
+  padding: 50px 130px;
+
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .title {
-  color: #0d2f6d;
+  color: #232e26;
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 30px;

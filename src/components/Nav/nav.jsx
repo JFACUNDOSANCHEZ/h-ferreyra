@@ -3,14 +3,25 @@ import styles from './Navbar.module.css';
 export default function Navbar() {
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}><img className={styles.imge} src="https://visualmedica.com/wp-content/webp-express/webp-images/uploads/2023/03/VM_logo1.png.webp" alt="" /></div>
+      <div className={styles.logo}>
+        {/* <img className={styles.imge} src="https://static.vecteezy.com/system/resources/previews/009/609/204/non_2x/trs-circle-letter-logo-design-with-circle-and-ellipse-shape-trs-ellipse-letters-with-typographic-style-the-three-initials-form-a-circle-logo-trs-circle-emblem-abstract-monogram-letter-mark-vector.jpg" alt="" /> */}
+        <h2>TRS</h2>
+        </div>
       <ul className={styles.navLinks}>
-        <li><a href="#inicio">INICIO</a></li>
-        <li><a href="#vmcloud">VM CLOUD</a></li>
-        <li><a href="#soluciones">SOLUCIONES VM</a></li>
-        <li><a href="#nosotros">NOSOTROS</a></li>
-        <li><a href="#blog">BLOG</a></li>
-        <li><a href="#contacto">CONTACTO</a></li>
+        <li className={styles.menuItem}><a href="#inicio">INICIO</a></li>
+        <li className={styles.menuItem}><a href="#vmcloud">VM CLOUD</a></li>
+        <li className={styles.menuItem}>
+          <a href="#soluciones">SOLUCIONES VM</a>
+          <ul className={styles.submenu}>
+            <li><a href="#sol1">S 1</a></li>
+            <li><a href="#sol2">S 2</a></li>
+            <li><a href="#sol3">S 3</a></li>
+          </ul>
+        </li>
+
+        <li className={styles.menuItem}><a href="#nosotros">NOSOTROS</a></li>
+        <li className={styles.menuItem}><a href="#blog">BLOG</a></li>
+        <li className={styles.menuItem}><a href="#contacto">CONTACTO</a></li>
       </ul>
     </nav>
   );

@@ -1,5 +1,5 @@
 .statsSection {
-  background-color: #f57c00;
+  background-color: #ffffff;
   padding: 40px 20px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
@@ -14,7 +14,7 @@
 
 .statCard {
   width: 250px;
-  color: #0d2f6d;
+  color: #115763;
 }
 
 .icon {
@@ -23,12 +23,12 @@
 }
 
 .count {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
 }
 
 .text {
   margin-top: 5px;
-  font-size: 0.95rem;
-  color: #022139;
+  font-size: 1.2rem;
+  color: #115763;
 }

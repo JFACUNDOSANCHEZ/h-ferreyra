@@ -1,0 +1,52 @@
+.banner {
+    background-color: #115763;
+    padding: 4rem;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6rem;
+  }
+  
+  .videoWrapper {
+    flex: 1;
+    min-width: 300px;
+    height: 300px;
+  }
+  
+  .textWrapper {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .bh2 {
+    font-size: 1.8rem;
+    margin: 1rem auto 4rem auto; /* Márgenes arriba y abajo fijos, automáticos a izquierda y derecha para centrar */
+    max-width: 600px; /* Opcional, para limitar el ancho */
+    text-align: center; /* Centra el texto dentro del contenedor */
+  }
+  
+  
+  .bold {
+   
+  }
+  
+  .bp {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .button {
+    background-color: #e7e7e7;
+    color: rgb(16, 58, 19);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  

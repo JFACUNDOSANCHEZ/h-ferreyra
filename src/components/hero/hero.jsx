@@ -1,5 +1,6 @@
 import styles from './HeroSection.module.css';
- // Cambia esto por tu imagen real
+import cimg from '../../assets/imgPtrs.jpeg' 
+// Cambia esto por tu imagen real
 
 export default function HeroSection() {
   return (
@@ -9,7 +10,7 @@ export default function HeroSection() {
 
       <div className={styles.content}>
         <h1>
-          PACS RIS SOFTWARE<br />
+          PACS RIS <br /> SOFTWARE<br />
           PARA RADIOLOGÍA Y DIAGNÓSTICO POR IMÁGENES
         </h1>
         <br /><br />
@@ -17,7 +18,7 @@ export default function HeroSection() {
         <button className={styles.button}>LEER MÁS</button>
       </div>
       <div className={styles.imageContainer}>
-        <img src={'https://visualmedica.com/wp-content/uploads/2025/03/RIS-PACS-1_11zon.webp'} alt="Equipos médicos" />
+        <img src={cimg} alt="Equipos médicos" />
  </div>
       </div>
         </div>

@@ -14,6 +14,7 @@ const stats = [
 const StatsSection = () => {
   return (
     <section className={styles.statsSection}>
+      <br /><br />
       <div className={styles.statsContainer}>
         {stats.map((item, index) => (
           <div key={index} className={styles.statCard}>
@@ -25,6 +26,7 @@ const StatsSection = () => {
           </div>
         ))}
       </div>
+      <br /><br />
     </section>
   );
 };

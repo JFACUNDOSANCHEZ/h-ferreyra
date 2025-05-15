@@ -1,70 +1,70 @@
-.footer {
-  background-color: #003c7d; /* Color de fondo */
-  color: #fff;
-  padding: 40px 20px;
-  text-align: center;
+/* Footer.module.css */
+
+.footerContainer {
+  background-color: #115763;
+  color: white;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
 }
 
-.socialLinks {
+.footerTop {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.socialLinks a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
+.footerLeft {
+  flex: 1;
 }
 
-.socialLinks a:hover {
-  color: #f5a623; /* Color de hover */
+.footerTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-.footerLinks ul {
+.footerSubtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.socialIcons a {
+  color: white;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.footerRight {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerLinks {
   list-style-type: none;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .footerLinks li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-.footerLinks a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.footerLinks a:hover {
-  color: #f5a623;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
 .contactInfo p {
-  margin: 5px 0;
-  font-size: 14px;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.whatsappIcon {
+  font-size: 2rem;
+  color: #25d366;
 }
 
 .footerBottom {
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-.footerBottom p {
-  margin: 0;
-}
-
-.footer .whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  padding: 15px;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 24px;
-  cursor: pointer;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #ffffff;
 }

@@ -13,7 +13,9 @@ const certifications = [
 const Certificaciones = () => {
   return (
     <section className={styles.certSection}>
+      <br /><br />
       <h2 className={styles.title}>CERTIFICACIONES</h2>
+     <br /><br />
       <div className={styles.logoGrid}>
         {certifications.map((cert, index) => (
           <img
@@ -24,6 +26,7 @@ const Certificaciones = () => {
           />
         ))}
       </div>
+      <br /><br />
     </section>
   );
 };
