@@ -29,7 +29,7 @@ const reviews = [
 const Reviews = () => {
   return (
     <div className={styles.reviewsContainer}>
-      <h2 className={styles.title}>Lo que dicen nuestros usuarios</h2>
+      <h2 className={styles.title}>Nuestros usuarios</h2>
       <br /><br /><br />
       <div className={styles.reviewsList}>
         {reviews.map((review) => (

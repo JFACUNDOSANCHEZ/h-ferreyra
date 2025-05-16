@@ -3,6 +3,7 @@
     padding: 4rem;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+   background: linear-gradient(90deg, #0b373f 0%, #147d8c 100%);
   }
   
   .content {

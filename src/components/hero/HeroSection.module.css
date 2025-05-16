@@ -1,22 +1,29 @@
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url('https://images.pexels.com/photos/4226124/pexels-photo-4226124.jpeg');
-  background-size: cover;
-  background-position: center;
   max-height: 90%;
+  overflow: hidden; /* para que nada sobresalga */
 }
-
+.videoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.88); /* Blanco translúcido */
+  background: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0));
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .overlayContent {
@@ -53,19 +60,19 @@ color: #005f73;
 }
 
 .button {
-  background-color: #115763;
+  background-color: #11635c;
   color: white;
   padding: 18px 54px;
   font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   transition: transform 0.3s ease;
-  
+  font-size: 1.1rem;
 }
 
 .button:hover {
-  transform: scale(1.1); /* agranda el elemento un 10% */
+  transform: scale(1.2); /* agranda el elemento un 10% */
 }
 
 .imageContainer {
@@ -75,7 +82,8 @@ color: #005f73;
 }
 
 .imageContainer img {
-  max-width: 90%;
+  max-width: 350px;
+
   height: auto;
   object-fit: contain;
 }

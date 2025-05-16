@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.logo}>
         {/* <img className={styles.imge} src="https://static.vecteezy.com/system/resources/previews/009/609/204/non_2x/trs-circle-letter-logo-design-with-circle-and-ellipse-shape-trs-ellipse-letters-with-typographic-style-the-three-initials-form-a-circle-logo-trs-circle-emblem-abstract-monogram-letter-mark-vector.jpg" alt="" /> */}
-        <h2>TRS</h2>
+        <h2>T R S</h2>
         </div>
       <ul className={styles.navLinks}>
         <li className={styles.menuItem}><a href="#inicio">INICIO</a></li>
@@ -20,7 +20,7 @@ export default function Navbar() {
         </li>
 
         <li className={styles.menuItem}><a href="#nosotros">NOSOTROS</a></li>
-        <li className={styles.menuItem}><a href="#blog">BLOG</a></li>
+
         <li className={styles.menuItem}><a href="#contacto">CONTACTO</a></li>
       </ul>
     </nav>

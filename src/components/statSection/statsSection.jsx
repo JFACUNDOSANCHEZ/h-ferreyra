@@ -1,6 +1,6 @@
-// src/components/StatsSection.jsx
 import React from 'react';
 import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 import { FaCloudUploadAlt, FaHospitalAlt, FaCalendarCheck, FaMapMarkerAlt } from 'react-icons/fa';
 import styles from './StatsSection.module.css';
 
@@ -12,15 +12,27 @@ const stats = [
 ];
 
 const StatsSection = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Solo se activa una vez
+    threshold: 0.3,     // 30% del componente visible
+  });
+
   return (
-    <section className={styles.statsSection}>
+    <section className={styles.statsSection} ref={ref}>
       <br /><br />
       <div className={styles.statsContainer}>
         {stats.map((item, index) => (
           <div key={index} className={styles.statCard}>
             <div className={styles.icon}>{item.icon}</div>
             <div className={styles.count}>
-              <CountUp end={item.value} duration={2} separator="," suffix={item.suffix || ''} />
+              {inView && (
+                <CountUp
+                  end={item.value}
+                  duration={2}
+                  separator=","
+                  suffix={item.suffix || ''}
+                />
+              )}
             </div>
             <p className={styles.text}>{item.text}</p>
           </div>

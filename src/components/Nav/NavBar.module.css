@@ -4,13 +4,17 @@
   align-items: center;
   padding: 0px 40px;
   background-color: #115763;
-  color: rgb(255, 255, 255);
-}
+  color: white;
+  background: linear-gradient(90deg, #0b3b43 0%, #147d8c 100%);
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+letter-spacing: 0.5px;
 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.721); /* sombra moderna */
+}
 .logo {
 
-  font-size: 2rem;
-  
+  font-size: 1.9rem;
+  margin: 20px;
   font-family:Arial, Helvetica, sans-serif;
   margin-left: 5rem;
 }
@@ -22,32 +26,46 @@
 .navLinks {
   list-style: none;
   display: flex;
-  gap: 40px;
-  font-family:Arial, Helvetica, sans-serif ;
-    font-size: 1rem;
-}
-
-.navLinks li a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-weight: 500;
+  gap: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
 }
 
 .navLinks li a {
   position: relative;
-  transition: all 0.3s ease; /* suaviza cambios */
-  padding-bottom: 7px;       /* espacio extra bajo el texto */
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .navLinks li a::after {
-  content: "";
+  content: '';
   position: absolute;
-  left: 0;
   bottom: 0;
-  height: 3px; /* grosor de la línea */
+  left: 50%;
   width: 0;
-  background-color: #e7e8e9; /* color de la línea */
-  transition: width 0.3s ease;
+  height: 2px;
+  background-color: #bbdff0; /* un verde agua suave */
+  transition: width 0.3s ease, left 0.3s ease;
+  border-radius: 2px;
+}
+.navLinks,
+.navLinks li,
+.submenu,
+.submenu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li a:hover {
+  color: #bbdff0;
+}
+
+.navLinks li a:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .navLinks li a:hover::after {
@@ -64,9 +82,10 @@
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.7remx;
   padding: 10px 5px;
   display: block;
+  
 }
 
 /* Submenú oculto por defecto */
@@ -86,7 +105,7 @@
 /* Links dentro del submenu */
 .submenu li a {
   padding: 8px 15px;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 /* Mostrar submenu al hacer hover */
