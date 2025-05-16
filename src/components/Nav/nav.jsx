@@ -9,7 +9,7 @@ export default function Navbar() {
         </div>
       <ul className={styles.navLinks}>
         <li className={styles.menuItem}><a href="#inicio">INICIO</a></li>
-        <li className={styles.menuItem}><a href="#vmcloud">VM CLOUD</a></li>
+        <li className={styles.menuItem}><a href="#vmcloud">PRODUCTO</a></li>
         <li className={styles.menuItem}>
           <a href="#soluciones">SOLUCIONES VM</a>
           <ul className={styles.submenu}>

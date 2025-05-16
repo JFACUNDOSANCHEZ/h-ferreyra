@@ -26,7 +26,7 @@ export default function HeroSection() {
             </h1>
             <br /><br />
             <p>Soluciones 100% web, alojadas en la nube o en su institución.</p>
-            <button className={styles.button}>Ver mas</button>
+            <button className={styles.button}>LEER MÁS</button>
           </div>
           <div className={styles.imageContainer}>
             {/* <img src={cimg} alt="Equipos médicos" /> */}

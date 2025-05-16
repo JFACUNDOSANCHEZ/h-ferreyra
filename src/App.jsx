@@ -18,8 +18,8 @@ function App() {
     <div>
     <Navbar></Navbar>
     <HeroSection/>
-    <Banner />
     <SolutionsSection />
+    {/* <Banner /> */}
     <StatsSection />
     <ButtonAgen></ButtonAgen>
     <BannerYT />
