@@ -32,11 +32,11 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient(90deg, #014050 0%, #01738f 100%);
+  background: linear-gradient(90deg, #0382a1 0%, #01738f 100%);
   color: white;
   height: 6rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.835);
-  transition: all 0.10s ease;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.835); */
+  transition: all 0.0s ease;
 }
 /* Si quieres que el nav cambie estilo al scrollear */
 .scrolled {
@@ -48,8 +48,9 @@
 
 .scrolled {
  backdrop-filter: blur(10px); /* Aplicar el difuminado */
- background: linear-gradient(90deg, #030202 0%, #01738f 100%);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.843);
+ background: linear-gradient(90deg, #0382a1 0%, #01738f 100%);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.082);
   height: 5rem;
 }
 
@@ -68,7 +69,8 @@
   list-style: none;
   display: flex;
   gap: 30px;
-  font-size: 1rem;
+  font-size: 0.5rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 .navLinks li a {
@@ -107,10 +109,11 @@
 .menuItem a {
   color: white;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 100;
   font-size: 1.1rem;
   padding: 10px 5px;
   display: block;
+  font-family: 'Roboto', sans-serif;
 }
 
 .submenu {

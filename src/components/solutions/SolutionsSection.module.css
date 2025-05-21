@@ -1,21 +1,3 @@
-/* src/components/SolutionsSection.module.css */
-
-.solutionsSection {
-  padding: 60px 20px;
-  background-color: #f6f9fc;
-  text-align: center;
-   font-family: 'Poppins', sans-serif;
-   background-image:url('../../assets/vdoptrs.mp4') ;
-}
-
-.title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #115763;
-  margin-bottom: 10px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-
 .solutionsWrapper {
   position: relative;
   overflow: hidden;
@@ -29,16 +11,24 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.1; /* opcional: ajustá para mayor o menor visibilidad */
+  opacity: 0.1; /* Ajustá según lo que necesites */
 }
 
 .solutionsSection {
   position: relative;
   padding: 60px 20px;
+  background-color: #f6f9fc; /* Solo como fallback */
   text-align: center;
   font-family: 'Poppins', sans-serif;
   z-index: 1;
-  backdrop-filter: brightness(1.1); /* mejora contraste si se desea */
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0382a1;
+  margin-bottom: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .subtitle {
@@ -57,38 +47,43 @@
   gap: 30px;
 }
 
+/* Card estilo glassmorphism */
 .card {
-  background: white;
+  background: #ffffffee;
   border-radius: 16px;
-  padding: 20px;
-  width: 260px;
+  padding: 25px 20px;
+  width: 280px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .cardImage {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%; /* Esto lo hace circular */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto 15px auto;
-  border: 4px solid #e0e0e0;
+  margin: 0 auto 20px auto;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 4px #e6f0f2;
   background: white;
 }
 
+
 .cardTitle {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #004b66;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #115763;
   margin-bottom: 10px;
 }
-
 .cardText {
-  font-size: 0.9rem;
-  color: #333;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
 }

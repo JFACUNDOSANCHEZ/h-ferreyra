@@ -3,24 +3,24 @@ import styles from './SolutionsSection.module.css';
 import videoBg from '../../assets/vdoptrs.mp4';
 const solutions = [
   {
-    title: 'VM RIS GESTION ERP',
-    text: 'Administrar cada uno de los procesos y optimizar el flujo de trabajo con el mejor sistema de gestión integral. Desde el turno a la facturación.',
-    image: 'https://visualmedica.com/wp-content/uploads/2025/03/Dr.-Jorge-Sierra-2_11zon_11zon.webp', // reemplazá con la ruta correcta
+    title: ' Tomografía Computada',
+    text: ' Alta resolución para diagnóstico preciso. Tecnología multislice',
+    image: 'https://media.istockphoto.com/id/1828699365/es/vector/icono-de-esc%C3%A1ner-de-resonancia-magn%C3%A9tica-y-tomograf%C3%ADa-computarizada-ilustraci%C3%B3n-de-l%C3%ADnea.jpg?s=612x612&w=0&k=20&c=PrWu9SwYGMTrqGSM4hEy5wU3esgomGys0qDK48yXv08=', // reemplazá con la ruta correcta
   },
   {
-    title: 'VM PACS VNA',
-    text: 'Almacene, visualice, reporte y distribuya todos los estudios de su institución en forma local o remota.',
-    image: 'https://visualmedica.com/wp-content/uploads/2025/03/RIS-PACS-1-1_11zon-1_11zon.webp',
+    title: 'Resonancia Magnética',
+    text: ' Estudios detallados sin radiación ionizante.',
+    image: 'https://static.vecteezy.com/system/resources/previews/005/242/944/non_2x/phone-icon-telephone-icon-symbol-in-hand-for-app-and-messenger-free-vector.jpg',
   },
   {
-    title: 'VM PORTAL PACIENTE',
-    text: 'Los pacientes podrán acceder a todos los estudios realizados en su institución en forma rápida, segura y compartirlos con su médico referente.',
-    image: 'https://visualmedica.com/wp-content/uploads/2025/03/7_11zon.webp',
+    title: 'Visualización Digital de Imágenes',
+    text: 'Acceso inmediato a estudios desde cualquier lugar',
+    image: 'https://us.123rf.com/450wm/toxa2x2/toxa2x22211/toxa2x2221100068/193927182-icono-de-silueta-de-medicina-digital-en-l%C3%ADnea-m%C3%A9dico-en-computadora-atenci%C3%B3n-m%C3%A9dica-en-l%C3%ADnea-glifo.jpg?ver=6',
   },
   {
-    title: 'VM SPEECH',
+    title: 'Diagnóstico Remoto',
     text: 'La Inteligencia Artificial unida al vocabulario médico permiten precisión en el reconocimiento.',
-    image: 'https://visualmedica.com/wp-content/uploads/2025/03/8_11zon.webp',
+    image: 'https://img.freepik.com/vector-premium/vector-contorno-icono-sonografo-dispositivo-clinico_98396-71987.jpg',
   },
 ];
 
@@ -33,11 +33,13 @@ export default function SolutionsSection() {
       <source src={videoBg} type="video/mp4" />
       Tu navegador no soporta video HTML5.
     </video>
-      <h2 className={styles.title}>SOLUCIONES VM</h2>
+      <h2 className={styles.title}>Diagnostico Digital</h2>
       <br />
-      <p className={styles.subtitle}>
+      <br />
+      <br />
+      {/* <p className={styles.subtitle}>
         Todas las soluciones necesarias para su centro o servicio de diagnóstico por imágenes, instalados en la nube o en la institución.
-      </p>
+      </p> */}
       <br />
       <div className={styles.cardsContainer}>
         {solutions.map((item, idx) => (
