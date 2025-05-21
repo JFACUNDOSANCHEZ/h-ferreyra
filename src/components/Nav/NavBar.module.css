@@ -1,39 +1,79 @@
+.preNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #012933;
+  color: white;
+  padding: 0.5rem 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+  z-index: 1001;
+  transition: opacity 1.5s ease-in-out;
+  opacity: 1;
+
+}
+
+.prenavHidden {
+  transition: all 0.3s ease;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 40px;
-  background-color: #115763;
+  padding: 0 40px;
+  position: fixed;
+  top: 1.7rem; /* deja espacio para preNav */
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(90deg, #014050 0%, #01738f 100%);
   color: white;
-  background: linear-gradient(90deg, #0b3b43 0%, #147d8c 100%);
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-letter-spacing: 0.5px;
-
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.721); /* sombra moderna */
+  height: 6rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.835);
+  transition: all 0.1s ease;
 }
-.logo {
+/* Si quieres que el nav cambie estilo al scrollear */
+.scrolled {
+  background: #01222d;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.9);
+  top: 0;
+}
 
+
+.scrolled {
+ backdrop-filter: blur(10px); /* Aplicar el difuminado */
+ background: linear-gradient(90deg, #014050 0%, #01738f 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.843);
+  height: 5rem;
+}
+
+.logo {
   font-size: 1.9rem;
   margin: 20px;
-  font-family:Arial, Helvetica, sans-serif;
   margin-left: 5rem;
 }
-.imge{
-    width: 6rem;
-    border-radius: 40%;
+
+.imge {
+  width: 6rem;
+  border-radius: 40%;
 }
 
 .navLinks {
   list-style: none;
   display: flex;
   gap: 30px;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
 }
 
 .navLinks li a {
   position: relative;
-  color: #fff;
+  color: #f7f7f7;
   padding: 8px 12px;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -46,21 +86,13 @@ letter-spacing: 0.5px;
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #bbdff0; /* un verde agua suave */
+  background-color: #bbdff0;
   transition: width 0.3s ease, left 0.3s ease;
   border-radius: 2px;
 }
-.navLinks,
-.navLinks li,
-.submenu,
-.submenu li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 
 .navLinks li a:hover {
-  color: #bbdff0;
+  color: #ffffff;
 }
 
 .navLinks li a:hover::after {
@@ -68,47 +100,37 @@ letter-spacing: 0.5px;
   left: 0;
 }
 
-.navLinks li a:hover::after {
-  width: 100%;
-}
-
-
-
 .menuItem {
-  position: relative; /* para el submenu */
+  position: relative;
 }
 
 .menuItem a {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.7remx;
+  font-size: 1.1rem;
   padding: 10px 5px;
   display: block;
-  
 }
 
-/* Submenú oculto por defecto */
 .submenu {
   display: none;
   position: absolute;
-  top: 100%; /* justo debajo del menú padre */
+  top: 100%;
   left: 0;
   background-color: #115763;
   border-radius: 0px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   min-width: 170px;
   padding: 5px 0;
   z-index: 1000;
 }
 
-/* Links dentro del submenu */
 .submenu li a {
   padding: 8px 15px;
-  font-size: 20px;
+  font-size: 0.95rem;
 }
 
-/* Mostrar submenu al hacer hover */
 .menuItem:hover .submenu {
   display: block;
 }

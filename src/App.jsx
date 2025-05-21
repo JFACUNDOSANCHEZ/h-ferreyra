@@ -9,7 +9,7 @@ import Banner from './components/banner/Banner'
 import ButtonAgen from './components/buttonAgen/ButtonAgen'
 import Reviews from './components/reviews/Reviews'
 import BannerYT from './components/bannerYT/BannerYT'
-
+import HeroCarousel from './components/heroCarusel/HeroCarusel'
 function App() {
 
 
@@ -17,7 +17,7 @@ function App() {
     <>
     <div>
     <Navbar></Navbar>
-    <HeroSection/>
+    <HeroCarousel/>
     <SolutionsSection />
     {/* <Banner /> */}
     <StatsSection />
