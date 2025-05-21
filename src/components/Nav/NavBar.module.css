@@ -3,8 +3,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #0f1315;
-  color: white;
+  background-color: #cacacafa;
+  color: rgb(233, 233, 233);
   padding: 0.5rem 2rem;
   font-size: 0.9rem;
   text-align: center;
@@ -49,7 +49,6 @@
 .scrolled {
  backdrop-filter: blur(10px); /* Aplicar el difuminado */
  background: linear-gradient(90deg, #0382a1 0%, #01738f 100%);
-
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.082);
   height: 5rem;
 }
