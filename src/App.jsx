@@ -20,8 +20,8 @@ function App() {
     <HeroCarousel/>
     <SolutionsSection />
     {/* <Banner /> */}
-    <StatsSection />
     <ButtonAgen></ButtonAgen>
+    <StatsSection />
     <BannerYT />
     <Reviews />
     <Certificaciones />

@@ -25,6 +25,7 @@
   z-index: 1001;
   transition: all 0.3s ease;
   opacity: 1;
+
 }
 
 .prenavHidden {
@@ -46,9 +47,8 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient(90deg,
-   #047896 25%, #047896 40%, #047896 100%);  
-  color: rgb(255, 255, 255);
+  background: linear-gradient(90deg, #0382a1 0%, #01738f 100%);
+  color: white;
   height: 6rem;
   /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.835); */
   transition: all 0.0s ease;
@@ -62,9 +62,8 @@
 
 
 .scrolled {
-  background: #1f6980;
-  backdrop-filter: blur(10px); /* Aplicar el difuminado */
-  /* background: linear-gradient(90deg, #0f4755 0%, #01738f 100%); */
+ backdrop-filter: blur(10px); /* Aplicar el difuminado */
+ background: linear-gradient(90deg, #0382a1 0%, #01738f 100%);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.082);
   height: 5rem;
   margin-top: 0rem;
@@ -91,7 +90,7 @@
 
 .navLinks li a {
   position: relative;
-  color: #dddddd;
+  color: #f7f7f7;
   padding: 8px 12px;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -123,7 +122,7 @@
 }
 
 .menuItem a {
-  color: white;
+  color:   black;
   text-decoration: none;
   font-weight: 100;
   font-size: 1.1rem;
