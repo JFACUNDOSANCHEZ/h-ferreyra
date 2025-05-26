@@ -1,11 +1,45 @@
 .statsSection {
-  background-color: #ffffff;
+  position: relative;
   padding: 40px 20px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  color: #115763;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
+/* Imagen de fondo difuminada */
+.statsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://innovation.teleradweb.com.ar/hs-fs/hubfs/Stock%20images/Cabeceras/teleradddd.jpg?width=1100&name=teleradddd.jpg'); /* <-- cambia esta ruta */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15; /* Difuminado suave */
+  z-index: 0;
+}
+
+/* Capa blanca semiopaca para suavizar aún más la imagen */
+.statsSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* Contenedor de las estadísticas, por encima del fondo */
 .statsContainer {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
@@ -15,6 +49,7 @@
   justify-items: center;
   align-items: center;
 }
+
 .statCard {
   width: 250px;
   color: #115763;
@@ -33,14 +68,9 @@
 .text {
   margin-top: 5px;
   font-size: 1.2rem;
-  color: #115763;
 }
 
 .top {
-  grid-area: top;
-  
-    grid-column: 1 / span 2;
-  
   grid-column: 1 / -1;
   justify-self: center;
 }
@@ -48,6 +78,7 @@
 .bottomLeft {
   grid-column: 1 / 2;
 }
+
 .bottomRight {
   grid-column: 2 / 3;
 }

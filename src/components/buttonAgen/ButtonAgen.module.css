@@ -1,32 +1,63 @@
 .container {
-  background-color: #ffffffda; /* fondo naranja */
-    padding: 100px ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .boton {
-    background-color: #115763;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 22px 24px;
-    font-weight: bold;
-    font-size: 16px;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  
-  .boton:hover {
-    transform: scale(1.5);
-  }
-  
-  .icono {
-    font-size: 16px;
-  }
-  
-  
+  position: relative;
+  background-color: #9c9c9c5e; /* color de respaldo */
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* para que el fondo no sobresalga */
+}
+
+/* Imagen de fondo difuminada */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://centrodiagnostico.com/wp-content/uploads/2022/07/DSC_9154-scaled.jpg'); /* <-- cambia esta ruta */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15; /* difuminado suave */
+  z-index: 0;
+}
+
+/* Capa para suavizar aún más si querés */
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.536);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+/* Contenido encima del fondo */
+.boton {
+  position: relative;
+  z-index: 2;
+  background-color: #115763;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 22px 24px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.boton:hover {
+  transform: scale(1.5);
+}
+
+.icono {
+  font-size: 16px;
+}
