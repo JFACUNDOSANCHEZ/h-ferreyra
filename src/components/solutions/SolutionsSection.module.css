@@ -17,7 +17,14 @@
 .solutionsSection {
   position: relative;
   padding: 60px 20px;
-  background-color: #f6f9fc; /* Solo como fallback */
+  background: 
+  linear-gradient(
+      rgba(255, 255, 255, 0.993),
+      rgba(255, 255, 255, 0.301),
+      rgb(255, 255, 255)
+    ),
+    url('https://img.freepik.com/fotos-premium/distribucion-datos-red-fondo-digital-transferencia-informacion-representacion-3d_745045-78.jpg') no-repeat center center;
+  background-size: cover;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   z-index: 1;
@@ -26,7 +33,7 @@
 .title {
   font-size: 3rem;
   font-weight: 700;
-  color: #0382a1;
+  color: #192124;
   margin-bottom: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

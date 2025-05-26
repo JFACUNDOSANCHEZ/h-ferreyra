@@ -1,6 +1,6 @@
 import styles from './Navbar.module.css';
 import { useEffect, useState } from 'react';
-
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -15,11 +15,16 @@ export default function Navbar() {
 
   return (
     <>
-      {!scrolled && (
-        <div className={styles.preNav}>
-          <p>Atención personalizada | Tel: 0800-333-0000</p>
-        </div>
-      )}
+     {!scrolled && (
+  <div className={styles.preNav}>
+    <p>Atención personalizada | Tel: 0800-333-0000</p>
+    <div className={styles.socialIcons}>
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+    </div>
+  </div>
+)}
       <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.logo}>
           <h2>T R S</h2>

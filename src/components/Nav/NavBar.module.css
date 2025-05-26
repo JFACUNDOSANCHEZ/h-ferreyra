@@ -1,17 +1,30 @@
+.socialIcons a {
+  margin-left: 10px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.socialIcons a:hover {
+  color: #7f7f7f;
+}
+
 .preNav {
+  /* background: linear-gradient(90deg, #1d1d1d 0%, #636363 44%, #2b2b2b 100%);   */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #cacacafa;
+  background-color: #212121;
   color: rgb(233, 233, 233);
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 3rem;
   font-size: 0.9rem;
-  text-align: center;
+  display: flex; /* ACTUALIZACIÓN */
+  justify-content: space-between; /* ACTUALIZACIÓN */
+  align-items: center; /* ACTUALIZACIÓN */
   z-index: 1001;
   transition: all 0.3s ease;
   opacity: 1;
-
 }
 
 .prenavHidden {
@@ -23,39 +36,43 @@
 }
 
 .navbar {
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
   position: fixed;
-  top: 1.7rem; /* deja espacio para preNav */
+  top: 1.7rem;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient(90deg, #0382a1 0%, #01738f 100%);
-  color: white;
+  background: linear-gradient(90deg,
+   #047896 25%, #047896 40%, #047896 100%);  
+  color: rgb(255, 255, 255);
   height: 6rem;
   /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.835); */
   transition: all 0.0s ease;
+
 }
 /* Si quieres que el nav cambie estilo al scrollear */
 .scrolled {
-  background: #01222d;
   box-shadow: 0 4px 12px rgba(0,0,0,0.9);
   top: 0;
 }
 
 
 .scrolled {
- backdrop-filter: blur(10px); /* Aplicar el difuminado */
- background: linear-gradient(90deg, #0382a1 0%, #01738f 100%);
+  background: #1f6980;
+  backdrop-filter: blur(10px); /* Aplicar el difuminado */
+  /* background: linear-gradient(90deg, #0f4755 0%, #01738f 100%); */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.082);
   height: 5rem;
+  margin-top: 0rem;
 }
 
 .logo {
   font-size: 1.9rem;
-  margin: 20px;
+  margin: 30px;
   margin-left: 5rem;
 }
 
@@ -74,7 +91,7 @@
 
 .navLinks li a {
   position: relative;
-  color: #f7f7f7;
+  color: #dddddd;
   padding: 8px 12px;
   text-decoration: none;
   transition: color 0.3s ease;

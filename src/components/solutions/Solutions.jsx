@@ -29,10 +29,10 @@ export default function SolutionsSection() {
     <div className={styles.solutionsWrapper}>
 
     <section className={styles.solutionsSection}>
-    <video autoPlay loop muted playsInline className={styles.videoBackground}>
+    {/* <video autoPlay loop muted playsInline className={styles.videoBackground}>
       <source src={videoBg} type="video/mp4" />
       Tu navegador no soporta video HTML5.
-    </video>
+    </video> */}
       <h2 className={styles.title}>Soluciones Digitales</h2>
       <br />
       <br />

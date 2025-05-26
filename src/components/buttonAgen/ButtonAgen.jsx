@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ButtonAgen.module.css';
 import { FaArrowRight } from 'react-icons/fa';
 
-const ButtonAgendar = ({ texto = 'Agende su cita Aquí', onClick }) => {
+const ButtonAgendar = ({ texto = 'Agende su cita', onClick }) => {
   return (
     <div>
 

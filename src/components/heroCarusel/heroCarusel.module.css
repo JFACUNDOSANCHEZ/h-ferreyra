@@ -22,15 +22,15 @@
   inset: 0;
    background: linear-gradient(
   to right,
-  rgb(255, 255, 255) 0%,
-  rgba(255, 255, 255, 0.849) 40%,
-  rgba(255, 255, 255, 0.233) 100%
+  rgba(255, 255, 255, 0.986) 0%,
+  rgb(252, 252, 252) 40%,
+  rgba(7, 6, 6, 0.233) 100%
 ); 
   z-index: 1;
 }
 
 .overlay {
-  color: rgb(77, 77, 77);
+  color: rgb(0, 0, 0);
   position: relative;
   z-index: 2;
   padding: 2rem;
@@ -47,7 +47,7 @@
   /* background: rgba(0, 0, 0, 0.5); */
   padding: 2rem;
   max-width: 600px;
-  color: rgb(66, 66, 66);
+  color: rgb(37, 37, 37);
 
   margin-left: 5%;
   border-radius: 10px;
