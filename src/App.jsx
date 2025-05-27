@@ -10,6 +10,8 @@ import ButtonAgen from './components/buttonAgen/ButtonAgen'
 import Reviews from './components/reviews/Reviews'
 import BannerYT from './components/bannerYT/BannerYT'
 import HeroCarousel from './components/heroCarusel/HeroCarusel'
+import WhatsappButton from './components/whatsapp/whatsappButton'
+
 function App() {
 
 
@@ -20,12 +22,13 @@ function App() {
     <HeroCarousel/>
     <SolutionsSection />
     {/* <Banner /> */}
-    <ButtonAgen></ButtonAgen>
     <StatsSection />
+    <ButtonAgen></ButtonAgen>
     <BannerYT />
     <Reviews />
     <Certificaciones />
     <Footer />
+    <WhatsappButton />
     </div>
     </>
   )

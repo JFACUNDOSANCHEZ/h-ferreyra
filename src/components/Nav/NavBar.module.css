@@ -1,39 +1,36 @@
-.socialIcons a {
-  margin-left: 10px;
-  color: #ffffff;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+/* Animación de entrada */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-
-.socialIcons a:hover {
-  color: #7f7f7f;
-}
-
 .preNav {
-  /* background: linear-gradient(90deg, #1d1d1d 0%, #636363 44%, #2b2b2b 100%);   */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #212121;
-  color: rgb(233, 233, 233);
-  padding: 0.5rem 3rem;
-  font-size: 0.9rem;
-  display: flex; /* ACTUALIZACIÓN */
-  justify-content: space-between; /* ACTUALIZACIÓN */
-  align-items: center; /* ACTUALIZACIÓN */
+  background-color: #222;
+  color: #ddd;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   z-index: 1001;
-  transition: all 0.3s ease;
-  opacity: 1;
-
 }
 
 .prenavHidden {
-  transition: all 0.3s ease;
-
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transition: all 0.3s ease;
 }
 
 .navbar {
@@ -41,7 +38,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 20px;
   position: fixed;
   top: 1.7rem;
   left: 0;
@@ -49,30 +46,31 @@
   z-index: 1000;
   background: linear-gradient(90deg, #0382a1 0%, #01738f 100%);
   color: white;
-  height: 6rem;
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.835); */
-  transition: all 0.0s ease;
-
-}
-/* Si quieres que el nav cambie estilo al scrollear */
-.scrolled {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.9);
-  top: 0;
-}
-
-
-.scrolled {
- backdrop-filter: blur(10px); /* Aplicar el difuminado */
- background: linear-gradient(90deg, #0382a1 0%, #01738f 100%);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.082);
   height: 5rem;
-  margin-top: 0rem;
+  animation: slideDown 0.5s ease forwards;
+}
+
+.scrolled {
+  background: rgba(3, 130, 161, 0.75);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  top: 0;
+  height: 5rem;
+  margin-top: 0;
+  transition: all 0.4s ease;
 }
 
 .logo {
-  font-size: 1.9rem;
-  margin: 30px;
+  font-size: 2rem;
   margin-left: 5rem;
+  font-weight: bold;
+  color: #f1f1f1;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .imge {
@@ -83,9 +81,10 @@
 .navLinks {
   list-style: none;
   display: flex;
-  gap: 30px;
-  font-size: 0.5rem;
+  gap: 20px;
+  font-size: 1rem;
   font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
 .navLinks li a {
@@ -94,6 +93,7 @@
   padding: 8px 12px;
   text-decoration: none;
   transition: color 0.3s ease;
+  overflow: hidden;
 }
 
 .navLinks li a::after {
@@ -109,7 +109,8 @@
 }
 
 .navLinks li a:hover {
-  color: #ffffff;
+  color: #d1f3ff;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
 
 .navLinks li a:hover::after {
@@ -122,7 +123,7 @@
 }
 
 .menuItem a {
-  color:   black;
+  color: black;
   text-decoration: none;
   font-weight: 100;
   font-size: 1.1rem;
@@ -136,19 +137,84 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #115763;
-  border-radius: 0px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   min-width: 170px;
   padding: 5px 0;
   z-index: 1000;
+  transform: translateY(0);
+  transition: transform 0.2s ease;
 }
 
 .submenu li a {
   padding: 8px 15px;
   font-size: 0.95rem;
+  color: #115763;
 }
 
 .menuItem:hover .submenu {
   display: block;
+  transform: translateY(5px);
+}
+
+.socialIcons{
+padding: 0px 40px;
+
+}
+.socialIcons a {
+  margin: 0 10px;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+/* Colores oficiales */
+.facebook {
+  color: #1877F2; /* azul Facebook */
+}
+
+.instagram {
+  /* Instagram es un degradado, pero aquí un color aproximado */
+  color: #E4405F;
+}
+
+.linkedin {
+  color: #0A66C2;
+}
+
+/* Opcional: cambia color al pasar el mouse */
+.socialIcons a:hover.facebook {
+  color: #145dbf;
+}
+
+.socialIcons a:hover.instagram {
+  color: #c83655;
+}
+
+.socialIcons a:hover.linkedin {
+  color: #084c9e;
+}
+
+.twitter {
+  color: #1DA1F2;
+}
+
+.twitter:hover {
+  filter: brightness(0.8);
+}
+
+.youtube {
+  color: #FF0000;
+}
+
+.youtube:hover {
+  filter: brightness(0.8);
+}
+
+.whatsapp {
+  color: #25D366;
+}
+
+.whatsapp:hover {
+  filter: brightness(0.8);
 }

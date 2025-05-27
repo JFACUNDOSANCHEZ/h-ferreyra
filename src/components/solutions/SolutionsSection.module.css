@@ -13,15 +13,14 @@
   z-index: -1;
   opacity: 0.1; /* Ajustá según lo que necesites */
 }
-
 .solutionsSection {
   position: relative;
   padding: 60px 20px;
   background: 
   linear-gradient(
-      rgba(255, 255, 255, 0.993),
-      rgba(255, 255, 255, 0.301),
-      rgb(255, 255, 255)
+       rgba(255, 255, 255, 0.993),
+      rgba(255, 255, 255, 0.761),
+      rgba(255, 255, 255, 0.759)
     ),
     url('https://img.freepik.com/fotos-premium/distribucion-datos-red-fondo-digital-transferencia-informacion-representacion-3d_745045-78.jpg') no-repeat center center;
   background-size: cover;

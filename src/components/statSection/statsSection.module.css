@@ -3,6 +3,14 @@
   padding: 40px 20px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
+    background: 
+    linear-gradient(
+      rgba(255, 255, 255, 0.993),
+      rgba(255, 255, 255, 0.749),
+      rgba(255, 255, 255, 0.816)
+    ),
+    url('https://img.freepik.com/fotos-premium/distribucion-datos-red-fondo-digital-transferencia-informacion-representacion-3d_745045-78.jpg') no-repeat center center;
+  background-size: cover;
 }
 
 .statsContainer {

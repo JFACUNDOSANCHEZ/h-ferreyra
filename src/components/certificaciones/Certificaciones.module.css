@@ -27,9 +27,12 @@
   max-width: 140px;
   object-fit: contain;
   filter: grayscale(100%);
-  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  cursor: pointer; /* para indicar que es interactivo */
 }
 
 .certLogo:hover {
   filter: none;
+  transform: scale(1.1); /* agranda un 10% */
+  z-index: 10; /* para que quede arriba de otros elementos */
 }
