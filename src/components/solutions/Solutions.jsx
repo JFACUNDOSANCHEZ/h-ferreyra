@@ -33,7 +33,8 @@ export default function SolutionsSection() {
       <source src={videoBg} type="video/mp4" />
       Tu navegador no soporta video HTML5.
     </video> */}
-      <h2 className={styles.title}>Soluciones Digitales</h2>
+      <h2 className={styles.title}>SOLUCIONES DIGITALES</h2>
+      <br />
       <br />
       <br />
       <br />
