@@ -51,15 +51,10 @@ export default function Navbar() {
           <h2>T R S</h2>
         </div>
         <ul className={styles.navLinks}>
-          <li className={styles.menuItem}><a href="#inicio">INICIO</a></li>
-          <li className={styles.menuItem}><a href="#vmcloud">PRODUCTO</a></li>
+          <li className={styles.menuItem}><a href="/">INICIO</a></li>
+          <li className={styles.menuItem}><a href="/vmcloud">SOLUCIONES VM</a></li>
           <li className={styles.menuItem}>
-            <a href="#soluciones">SOLUCIONES VM</a>
-            <ul className={styles.submenu}>
-              <li><a href="#sol1">S 1</a></li>
-              <li><a href="#sol2">S 2</a></li>
-              <li><a href="#sol3">S 3</a></li>
-            </ul>
+          
           </li>
           <li className={styles.menuItem}><a href="#nosotros">NOSOTROS</a></li>
           <li className={styles.menuItem}><a href="#contacto">CONTACTO</a></li>

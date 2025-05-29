@@ -1,0 +1,60 @@
+.section {
+  position: relative;
+  padding:  20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  justify-items: center;
+
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.993),
+      rgba(255, 255, 255, 0.749),
+      rgba(255, 255, 255, 0.816)
+    ),
+    url('https://img.freepik.com/fotos-premium/distribucion-datos-red-fondo-digital-transferencia-informacion-representacion-3d_745045-78.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+ 
+
+}
+
+
+.card {
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+ 
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+}
+
+.title {
+  font-size: 1.1rem;
+  color: #003366;
+  font-weight: 700;
+  margin-top: 1rem;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #333;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* ✅ Diseño responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+  .section {
+    grid-template-columns: 1fr; /* solo una columna en mobile */
+  }
+}

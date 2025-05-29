@@ -1,0 +1,74 @@
+.vmContainer {
+  width: 100%;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 100;
+}
+
+.heroSection {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* ahora alinea a la derecha */
+  color: rgb(0, 0, 0);
+  text-align: right;
+  isolation: isolate;
+}
+.backgroundVideo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,  /* cambia la dirección para difuminar desde la derecha */
+    rgba(255, 255, 255, 0.96) 0%,
+    rgb(252, 252, 252) 40%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: -1;
+}
+.textContent {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 600px;
+  margin-right: 5%; /* ahora margina desde la derecha */
+  margin-top: 10rem;
+  text-align: right;
+}.textContent {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 600px;
+  margin-right: 5%; /* ahora margina desde la derecha */
+  margin-top: 10rem;
+  text-align: right;
+}
+
+.textContent h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.textContent p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.textContent button {
+  padding: 0.75rem 1.5rem;
+  background-color: #2e2e2e;
+  color: rgb(255, 255, 255);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 20px;
+}
