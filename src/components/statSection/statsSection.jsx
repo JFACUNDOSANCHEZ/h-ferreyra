@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import {
-  FaAccusoft,
-  FaAdn,
-  FaAlipay
+  FaCloud,
+  FaHospitalAlt,
+  FaCalendarCheck,
+  // Podrías añadir más iconos específicos si los necesitas para otras estadísticas
 } from 'react-icons/fa';
+
 import styles from './StatsSection.module.css';
 
 const stats = [
-  { icon: <FaAccusoft />, value: 300, suffix: 'K', text: 'Estudios/mes en nube' },
-  { icon: <FaAdn />, value: 2000, text: 'Instalaciones en Instituciones' },
-  { icon: <FaAlipay />, value: 7, suffix: 'M', text: 'De turnos procesados' },
+  { icon: <FaCloud />, value: 300, suffix: 'K', text: 'Estudios en Nube' }, // Texto más conciso
+  { icon: <FaHospitalAlt />, value: 2000, text: 'Centros Asociados' }, // Texto más conciso
+  { icon: <FaCalendarCheck />, value: 7, suffix: 'M', text: 'Turnos Gestionados' }, // Texto más conciso
 ];
 
 const StatsSection = () => {
@@ -20,37 +25,42 @@ const StatsSection = () => {
     threshold: 0.3,
   });
 
-  return (
-    <section className={styles.statsSection} ref={ref}>
-      <br /><br />
-      <div className={styles.statsContainer}>
-        {stats.map((item, index) => {
-          const positionClass =
-            index === 0
-              ? styles.top
-              : index === 1
-              ? styles.bottomLeft
-              : styles.bottomRight;
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
-          return (
-            <div key={index} className={`${styles.statCard} ${positionClass}`}>
-              <div className={styles.count}>
-                {inView && (
-                  <CountUp
-                    end={item.value}
-                    duration={2}
-                    separator=","
-                    suffix={item.suffix || ''}
-                  />
-                )}
-              </div>
-              <div className={styles.icon}>{item.icon}</div>
-              <p className={styles.text}>{item.text}</p>
-            </div>
-          );
-        })}
+  return (
+    <section className={styles.statsSection}>
+      <div className={styles.contentHeader}>
+        <h2 className={styles.mainTitle} data-aos="fade-up">Nuestros Logros en Cifras</h2> {/* Título más neutro */}
+        <p className={styles.mainSubtitle} data-aos="fade-up" data-aos-delay="100">
+          Orgullosos de nuestro impacto en la optimización de procesos médicos.
+        </p>
       </div>
-      <br /><br />
+
+      <div className={styles.statsContainer} ref={ref}>
+        {stats.map((item, index) => (
+          <div
+            key={index}
+            className={styles.statCard} // Volvemos a 'statCard' para reflejar el diseño de tarjeta
+            data-aos="fade-up"
+            data-aos-delay={200 + index * 100}
+          >
+            <div className={styles.icon}>{item.icon}</div>
+            <div className={styles.count}>
+              {inView && (
+                <CountUp
+                  end={item.value}
+                  duration={2.5}
+                  separator="."
+                  suffix={item.suffix || ''}
+                />
+              )}
+            </div>
+            <p className={styles.text}>{item.text}</p>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

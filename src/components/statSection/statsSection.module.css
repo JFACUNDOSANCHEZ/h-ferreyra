@@ -1,60 +1,175 @@
+/* src/components/StatsSection/StatsSection.module.css */
+
 .statsSection {
   position: relative;
-  padding: 40px 20px;
+  padding: 100px 20px; /* Padding generoso */
   text-align: center;
-  font-family: 'Poppins', sans-serif;
-    background: 
-    linear-gradient(
-      rgba(255, 255, 255, 0.993),
-      rgba(255, 255, 255, 0.749),
-      rgba(255, 255, 255, 0.816)
-    ),
-    url('https://img.freepik.com/fotos-premium/distribucion-datos-red-fondo-digital-transferencia-informacion-representacion-3d_745045-78.jpg') no-repeat center center;
-  background-size: cover;
+  font-family: 'Inter', sans-serif;
+  color: #333; /* Color de texto base */
+  background-color: #f8fafd; /* Fondo sutil, suave y profesional */
+  /* Puedes añadir una sutil imagen de fondo si es muy abstracta y de alta calidad */
+  /* background: url('/path/to/subtle-pattern.svg') repeat; */
+}
+
+.contentHeader {
+  margin-bottom: 70px; /* Espacio entre el encabezado y las estadísticas */
+}
+
+/* --- TÍTULO PRINCIPAL (H2) - Consistente, pero puede ser un poco menos "pesado" */
+.mainTitle {
+  font-size: 2.8em; /* Un poco menos grande que la versión "impactante" */
+  font-weight: 700;
+  color: #1a2c4e;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+/* --- SUBTÍTULO PRINCIPAL (P) - Consistente */
+.mainSubtitle {
+  font-size: 1.2em; /* Un poco más pequeño que la versión "impactante" */
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .statsContainer {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 40px;
-  max-width: 800px;
-  margin: 0 auto;
-  justify-items: center;
-  align-items: center;
+  display: grid; /* Volvemos a grid para un layout más estructurado */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 columnas en desktop */
+  gap: 40px; /* Espacio entre las tarjetas */
+  max-width: 1000px; /* Ancho máximo para el grid */
+  margin: 0 auto; /* Centrar el grid */
+  justify-items: center; /* Centrar las tarjetas dentro de sus celdas */
+  align-items: start; /* Alinear arriba para que las tarjetas tengan alturas individuales */
 }
 
+/* --- TARJETA INDIVIDUAL (STAT CARD) --- */
 .statCard {
-  width: 250px;
-  color: #115763;
+  background-color: #ffffff; /* Fondo blanco puro */
+  border-radius: 12px; /* Bordes suaves */
+  /* Una sombra más sutil y elegante */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 35px 25px; /* Padding interno */
+  width: 100%; /* Ocupa el ancho de su columna */
+  max-width: 300px; /* Ancho máximo para el diseño */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar contenido */
+  text-align: center; /* Centrar texto */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  border: 1px solid #e0e0e0; /* Un borde sutil para definirla */
 }
 
+.statCard:hover {
+  transform: translateY(-5px); /* Elevación sutil */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra un poco más pronunciada */
+  /* Opcional: Un fondo muy, muy sutil al hover */
+  /* background-color: rgba(0, 123, 255, 0.03); */
+}
+
+/* --- ICONO DENTRO DE LA TARJETA --- */
 .icon {
-  font-size: 4.5rem;
-  margin-bottom: 10px;
+  font-size: 4em; /* Iconos de tamaño medio, prominentes pero no gigantes */
+  margin-bottom: 20px; /* Más espacio para separar del número */
+  color: #0382a1; /* ¡Este es el color sugerido! */
+  line-height: 1;
 }
 
+/* --- NÚMERO DE LA ESTADÍSTICA --- */
 .count {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 3em; /* Números significativos pero no abrumadores */
+  font-weight: 700; /* Negrita */
+  color: #1a2c4e; /* Color corporativo */
+  margin-bottom: 10px; /* Espacio entre número y texto */
+  line-height: 1;
 }
 
+/* --- TEXTO DESCRIPTIVO DE LA ESTADÍSTICA --- */
 .text {
-  margin-top: 5px;
-  font-size: 1.2rem;
+  font-size: 1.1em; /* Tamaño legible */
+  color: #666; /* Gris más suave */
+  line-height: 1.5;
+  margin-top: 0;
+  /* Puedes mantener uppercase o dejarlo en capitalización normal para más suavidad */
+  /* text-transform: uppercase; */
+  /* letter-spacing: 0.5px; */
+  font-weight: 500;
 }
 
-.top {
-  grid-column: 1 / -1;
-  justify-self: center;
+/* --------------------------------------------------------------------- */
+/* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .mainTitle {
+    font-size: 2.5em;
+  }
+  .mainSubtitle {
+    font-size: 1.1em;
+  }
+  .statsContainer {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 2 columnas en tablet */
+    gap: 30px;
+  }
+  .statCard {
+    padding: 30px 20px;
+  }
+  .icon {
+    font-size: 3.5em;
+  }
+  .count {
+    font-size: 2.5em;
+  }
+  .text {
+    font-size: 1em;
+  }
 }
 
-.bottomLeft {
-  grid-column: 1 / 2;
+@media (max-width: 768px) {
+  .statsSection {
+    padding: 70px 15px;
+  }
+  .mainTitle {
+    font-size: 2em;
+  }
+  .mainSubtitle {
+    font-size: 1em;
+  }
+  .statsContainer {
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 25px;
+  }
+  .statCard {
+    max-width: 280px; /* Limitar el ancho de cada ítem */
+  }
+  .icon {
+    font-size: 3em;
+  }
+  .count {
+    font-size: 2em;
+  }
+  .text {
+    font-size: 0.95em;
+  }
 }
 
-.bottomRight {
-  grid-column: 2 / 3;
+@media (max-width: 576px) {
+  .statsSection {
+    padding: 50px 10px;
+  }
+  .mainTitle {
+    font-size: 1.8em;
+  }
+  .mainSubtitle {
+    font-size: 0.9em;
+  }
+  .icon {
+    font-size: 2.5em;
+  }
+  .count {
+    font-size: 1.8em;
+  }
+  .text {
+    font-size: 0.9em;
+  }
 }

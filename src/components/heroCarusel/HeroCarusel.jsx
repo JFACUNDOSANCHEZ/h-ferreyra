@@ -7,14 +7,14 @@ import styles from './heroCarusel.module.css';
 const slides = [
   {
      image: 'https://www.maimonides.edu/wp-content/uploads/2020/07/20200713-diagnostico-por-imagenes.jpg',
-    title: 'RIS y PACS 100% EN LA NUBE',
+    title: 'RIS, PACs, EN LA NUVE',
     description: 'Gestione sus estudios médicos y operaciones con total libertad desde cualquier lugar, en cualquier momento',
     button: 'Saber más'
   }
   ,
   {
  image: 'https://www.ndximaging.com/wp-content/uploads/MRI-Scan-Reads-And-Interpretations-From-20-Per-Study-October-27-2022-National-Diagnostic-Imaging-Teleradiology-Company-Cleveland-Ohio.jpg',
- title: 'ASISTENCIA 24/7, INTEGRACION SIMPLE Y DEMOS INTERACTIVAS',
+ title: 'INTEGRACIÓN, SOPORTE 24HS , DEMOS',
  description: 'Integración sencilla con su sistema actual, asistencia técnica permanente y demos personalizadas para su equipo',
  button: 'Ver detalles'
 },
@@ -28,7 +28,7 @@ const slides = [
   
    {
      image: 'https://images.pexels.com/photos/5452300/pexels-photo-5452300.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-     title: 'CONTROLE SU CENTRO DESDE UN SOLO LUGAR',
+     title: 'TENGA AUTONOMIA Y CONTROL TOTAL',
      description: 'Acceda a su información médica de forma segura, rápida y sin límites desde nuestra plataforma cloud',
      button: 'Ver detalles'
    }
@@ -57,7 +57,7 @@ export default function HeroCarousel() {
             <div className={styles.overlay}>
               <h2>{slide.title}</h2>
               <p>{slide.description}</p>
-         <button>{slide.button}</button> 
+         {/* <button>{slide.button}</button>  */}
             </div>
           </div>
         </SwiperSlide>

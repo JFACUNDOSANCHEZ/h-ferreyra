@@ -1,4 +1,5 @@
 .solutionsWrapper {
+  margin-top: 5rem;
   position: relative;
   overflow: hidden;
 }
@@ -13,37 +14,43 @@
   z-index: -1;
   opacity: 0.1; /* Ajustá según lo que necesites */
 }
+
 .solutionsSection {
   position: relative;
   padding: 60px 20px;
-  background: 
-  linear-gradient(
-       rgba(255, 255, 255, 0.993),
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.993),
       rgba(255, 255, 255, 0.761),
       rgba(255, 255, 255, 0.759)
-    ),
-    url('https://img.freepik.com/fotos-premium/distribucion-datos-red-fondo-digital-transferencia-informacion-representacion-3d_745045-78.jpg') no-repeat center center;
+    );
+    /* url('https://img.freepik.com/fotos-premium/distribucion-datos-red-fondo-digital-transferencia-informacion-representacion-3d_745045-78.jpg') no-repeat center center; */
   background-size: cover;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  /* --- APLICAMOS LA MISMA FUENTE GENERAL DE SUSCRIPCION --- */
+  font-family: 'Inter', sans-serif; /* Fuente de .subscriptionSection */
   z-index: 1;
 }
 
+/* --- TÍTULO PRINCIPAL - Adaptado del h2 de .subscriptionContent --- */
 .title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #192124;
-  margin-bottom: 10px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3.2em; /* MISMO TAMAÑO QUE EL H2 DE .subscriptionContent */
+  font-weight: 700; /* MISMO PESO QUE EL H2 DE .subscriptionContent */
+  color: #16283F; /* MISMO COLOR QUE EL H2 DE .subscriptionContent (era #192124) */
+  margin-bottom: 25px; /* Ajustado para consistencia (era 10px) */
+  line-height: 1.2; /* Para consistencia */
+  /* La font-family ya la hereda de .solutionsSection, no es necesario repetirla */
 }
 
+/* --- SUBTÍTULO PRINCIPAL - Adaptado del .subtitle de Suscripcion --- */
 .subtitle {
-  font-size: 1.3rem;
-  color: #115763;
+  font-size: 1.3em; /* MISMO TAMAÑO QUE EL .subtitle DE SUSCRIPCION (era 1.3rem) */
+  color: #555; /* MISMO COLOR QUE EL .subtitle DE SUSCRIPCION (era #115763) */
   margin-bottom: 40px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6; /* Para consistencia */
 }
 
 .cardsContainer {
@@ -81,15 +88,74 @@
   background: white;
 }
 
-
+/* --- TÍTULO DE CADA TARJETA - Adaptado del h3 de .benefitItem --- */
 .cardTitle {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #115763;
+  font-weight: 600; /* MISMO PESO QUE .benefitItem h3 (era 700) */
+  font-size: 1.4em; /* MISMO TAMAÑO QUE .benefitItem h3 (era 1.1rem) */
+  color: #2c3e50; /* MISMO COLOR QUE .benefitItem h3 (era #0382a1) */
   margin-bottom: 10px;
+  line-height: 1.2; /* Para consistencia */
+  /* La font-family ya la hereda de .solutionsSection, no es necesario repetirla */
 }
+
+/* --- TEXTO DE CADA TARJETA - Adaptado del p de .benefitItem --- */
 .cardText {
-  font-size: 0.95rem;
-  color: #444;
-  line-height: 1.5;
+  font-size: 0.95em; /* MISMO TAMAÑO QUE .benefitItem p (era 0.95rem) */
+  color: #666; /* MISMO COLOR QUE .benefitItem p (era #444) */
+  line-height: 1.6; /* Para consistencia (era 1.5) */
+  /* La font-family ya la hereda de .solutionsSection, no es necesario repetirla */
+}
+
+
+/* --------------------------------------------------------------------- */
+/* --- MEDIA QUERIES PARA RESPONSIVIDAD (Ajustadas para Soluciones) --- */
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .title {
+    font-size: 2.8em; /* Mismo que h2 de Suscripcion en móvil */
+  }
+  .subtitle {
+    font-size: 1.1em; /* Mismo que .subtitle de Suscripcion en móvil */
+  }
+  .cardTitle {
+    font-size: 1.2em; /* Ajuste para tarjeta en móvil */
+  }
+  .cardText {
+    font-size: 0.9em; /* Ajuste para tarjeta en móvil */
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2em; /* Mismo que h2 de Suscripcion en móvil más pequeño */
+  }
+  .subtitle {
+    font-size: 1em; /* Mismo que .subtitle de Suscripcion en móvil más pequeño */
+  }
+  .cardTitle {
+    font-size: 1.1em; /* Ajuste para tarjeta en móvil más pequeño */
+  }
+  .cardText {
+    font-size: 0.85em; /* Ajuste para tarjeta en móvil más pequeño */
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 1.8em; /* Mismo que h2 de Suscripcion en móvil muy pequeño */
+  }
+  .subtitle {
+    font-size: 0.9em; /* Mismo que .subtitle de Suscripcion en móvil muy pequeño */
+  }
+  .card {
+    width: 100%; /* Las tarjetas ocupan el ancho completo en móviles muy pequeños */
+    max-width: 280px; /* Para que no se estiren demasiado en pantallas un poco más grandes */
+  }
+  .cardTitle {
+    font-size: 1em; /* Ajuste para tarjeta en móvil muy pequeño */
+  }
+  .cardText {
+    font-size: 0.8em; /* Ajuste para tarjeta en móvil muy pequeño */
+  }
 }

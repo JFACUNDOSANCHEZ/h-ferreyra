@@ -1,0 +1,54 @@
+.diagnosticSection {
+  padding: 60px 10%;
+  background-color: #fff;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: #1f3c88;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.card {
+  width: 220px;
+  text-align: center;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.cardTitle {
+  font-weight: 700;
+  color: #1f3c88;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: #4a4a4a;
+}

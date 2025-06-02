@@ -1,0 +1,151 @@
+/* src/components/Caracteristicas/Caracteristicas.module.css */
+
+.featuresSection {
+  padding: 80px 20px;
+  background-color: #f8fafd;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.mainTitle {
+  /* margin-top: 3rem;  Eliminado aquí y se manejará con padding de la sección si es necesario. */
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #1a2c4e;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.mainSubtitle {
+  font-size: 1.2em;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-items: center;
+  align-items: start; /* Mantenemos start para que las filas no se estiren */
+}
+
+/* --- ESTILOS PARA LA ANIMACIÓN DE APARICIÓN EN featureCard --- */
+.featureCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 35px 25px;
+  width: 100%;
+  max-width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 320px; /* Ajusta este valor según la longitud de tu texto más largo. Prueba y error. */
+  justify-content: flex-start;
+
+  border: 1px solid #e0e0e0;
+
+  /* ESTADO INICIAL: OCULTO Y LIGERAMENTE BAJO */
+  opacity: 0;
+  transform: translateY(30px); /* Un poco más de desplazamiento para un efecto más notorio */
+
+  /* TRANSICIÓN: APLICA TANTO AL HOVER COMO A LA ANIMACIÓN DE APARICIÓN */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+  /* IMPORTANTE: Añade el 'transform' y 'opacity' a la transición general */
+}
+
+/* ESTADO FINAL: VISIBLE Y EN POSICIÓN ORIGINAL CUANDO featureCardAnimated SE APLICA */
+.featureCardAnimated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.featureCard:hover {
+  /* La transición del hover ya está incluida en la propiedad 'transition' de .featureCard */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --- FIN DE ESTILOS DE ANIMACIÓN --- */
+
+.featureIcon {
+  font-size: 3.8em;
+  margin-bottom: 20px;
+  color: #0382a1;
+  line-height: 1;
+}
+
+.featureTitle {
+  font-size: 1.4em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600;
+  min-height: 1.2em * 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureDescription {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* --------------------------------------------------------------------- */
+/* --- MEDIA QUERIES --- */
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .mainTitle { font-size: 2.5em; }
+  .mainSubtitle { font-size: 1.1em; }
+  .featuresGrid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+  }
+  .featureCard {
+    padding: 30px 20px;
+    min-height: 300px;
+  }
+  .featureIcon { font-size: 3.2em; }
+  .featureTitle { font-size: 1.3em; }
+  .featureDescription { font-size: 0.9em; }
+}
+
+@media (max-width: 768px) {
+  .featuresSection { padding: 60px 15px; }
+  .mainTitle { font-size: 2em; }
+  .mainSubtitle { font-size: 1em; }
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .featureCard {
+    max-width: 280px;
+    min-height: 280px;
+  }
+  .featureIcon { font-size: 2.8em; }
+  .featureTitle { font-size: 1.2em; }
+  .featureDescription { font-size: 0.85em; }
+}
+
+@media (max-width: 576px) {
+  .featuresSection { padding: 40px 10px; }
+  .mainTitle { font-size: 1.8em; }
+  .mainSubtitle { font-size: 0.9em; }
+  .featureIcon { font-size: 2.5em; }
+  .featureTitle { font-size: 1.1em; }
+  .featureDescription { font-size: 0.8em; }
+  .featureCard {
+    min-height: 260px;
+  }
+}

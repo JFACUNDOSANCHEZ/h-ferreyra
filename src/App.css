@@ -1,0 +1,15 @@
+/* En tu archivo CSS global (ej. src/index.css o src/App.css) */
+
+html,
+body {
+  overflow-x: hidden; /* Esto es la clave para eliminar el scroll horizontal */
+  width: 100%; /* Asegura que el body ocupe el 100% del ancho disponible */
+  margin: 0; /* Asegura que no haya márgenes predeterminados */
+  padding: 0; /* Asegura que no haya paddings predeterminados */
+}
+
+/* Y si tienes un div raíz en tu App.js, también podrías aplicarle: */
+#root { /* o el ID/clase de tu div principal de la aplicación */
+  width: 100%;
+  overflow-x: hidden;
+}

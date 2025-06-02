@@ -1,71 +1,107 @@
 /* Footer.module.css */
 
 .footerContainer {
-  background-color: #115763;
-   background: linear-gradient(90deg, #0382a1 0%, #147d8c 100%);
+  background: #0382a1 ;
   color: white;
-  padding: 2rem;
-  font-family: Arial, sans-serif;
+  padding: 3rem 2rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .footerTop {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footerLeft {
   flex: 1;
+  min-width: 220px;
 }
 
 .footerTitle {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
 }
 
 .footerSubtitle {
   font-size: 1rem;
-  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+  margin-bottom: 1.2rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .socialIcons a {
   color: white;
-  margin-right: 1rem;
   font-size: 1.5rem;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.socialIcons a:hover {
+  color: #c0f0ff;
+  transform: scale(1.1);
 }
 
 .footerRight {
-  flex: 2;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: flex-start;
+  min-width: 220px;
 }
 
-.footerLinks {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-.footerLinks li {
-  margin-bottom: 0.5rem;
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   font-size: 1rem;
+  color: #f0f0f0;
 }
 
-.contactInfo p {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.whatsappIcon {
+.contactInfo a {
+  margin-top: 0.5rem;
   font-size: 2rem;
   color: #25d366;
+  transition: transform 0.2s ease;
+}
+
+.contactInfo a:hover {
+  transform: scale(1.1);
 }
 
 .footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   text-align: center;
-  margin-top: 2rem;
-  font-size: 1rem;
-  color: #ffffff;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #dddddd;
+}
+@media (max-width: 768px) {
+  .footerTop {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footerLeft,
+  .footerRight {
+    align-items: center;
+  }
+
+  .contactInfo {
+    align-items: center;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
 }

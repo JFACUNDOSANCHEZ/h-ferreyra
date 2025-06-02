@@ -1,0 +1,293 @@
+/* src/components/ContactSection/ContactSection.module.css */
+
+.contactSection {
+  background: #0382a1 ; /* Fondo degradado como tu navbar */
+  padding: 80px 20px;
+  font-family: 'Inter', sans-serif;
+  color: white; /* Texto principal en blanco */
+}
+
+.contactContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; /* Permite que las columnas se apilen en pantallas pequeñas */
+  gap: 50px; /* Espacio entre las dos columnas */
+  align-items: flex-start; /* Alinea las columnas en la parte superior */
+  justify-content: center; /* Centra las columnas horizontalmente */
+}
+
+.formInfoColumn {
+  flex: 1; /* Permite que esta columna ocupe el espacio disponible */
+  min-width: 350px; /* Ancho mínimo para el formulario */
+  max-width: 600px; /* Ancho máximo para el formulario */
+  padding: 20px 0;
+  text-align: left;
+}
+
+.mainTitle {
+  font-size: 3.2em;
+  font-weight: 700;
+  color: white; /* Título principal en blanco */
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.9); /* Blanco ligeramente transparente */
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #c7f2f2; /* Un azul/verde muy claro para resaltar */
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre los campos del formulario */
+}
+
+.formGroup {
+  position: relative;
+}
+
+.visually-hidden { /* Para etiquetas accesibles pero invisibles */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.inputField,
+.textareaField {
+  width: 100%;
+  padding: 15px 20px;
+  border: none; /* Eliminar el borde */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: rgba(255, 255, 255, 0.15); /* Fondo blanco transparente */
+  color: white; /* Texto de entrada en blanco */
+  font-size: 1.1em;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.inputField::placeholder,
+.textareaField::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Color del placeholder */
+}
+
+.inputField:focus,
+.textareaField:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.25); /* Más opaco al enfocar */
+  box-shadow: 0 0 0 3px rgba(199, 242, 242, 0.5); /* Anillo de enfoque azul claro */
+}
+
+.textareaField {
+  resize: vertical; /* Permite redimensionar verticalmente */
+  min-height: 120px;
+}
+
+.submitButton {
+  background-color: white; /* Botón blanco */
+  color: #0382a1; /* Texto azul de tu navbar */
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px; /* Botón redondeado */
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  align-self: flex-start; /* Alinea el botón a la izquierda dentro del flex column */
+}
+
+.submitButton:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.formStatus {
+  margin-top: 15px;
+  font-size: 1em;
+  color: #c7f2f2; /* Color para los mensajes de estado */
+  text-align: left;
+}
+
+/* --- COLUMNA DE INFORMACIÓN DE CONTACTO --- */
+.contactInfoColumn {
+  flex: 1;
+  min-width: 300px; /* Ancho mínimo para la columna de info */
+  max-width: 450px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Para el icono de fondo */
+  overflow: hidden; /* Para que el icono grande de fondo no se salga */
+}
+
+.infoBackgroundIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15em; /* Icono muy grande */
+  color: rgba(255, 255, 255, 0.1); /* Muy transparente */
+  z-index: 0; /* Asegura que esté detrás del contenido */
+  pointer-events: none; /* No interactúa con el ratón */
+}
+
+.infoTitle {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 30px;
+  z-index: 1; /* Asegura que el título esté por encima del icono de fondo */
+}
+
+.contactDetail {
+  display: flex;
+  align-items: flex-start; /* Alinea el icono y el texto al inicio */
+  gap: 15px;
+  margin-bottom: 25px;
+  z-index: 1; /* Asegura que los detalles estén por encima del icono de fondo */
+}
+
+.detailIcon {
+  font-size: 2em;
+  color: #c7f2f2; /* Color azul/verde claro para los iconos de detalle */
+  flex-shrink: 0; /* Evita que el icono se encoja */
+}
+
+.contactDetail p,
+.contactDetail a {
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.contactLink {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: #c7f2f2; /* Azul/verde más claro en hover */
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------- */
+/* --- MEDIA QUERIES --- */
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .contactSection {
+    padding: 60px 20px;
+  }
+  .contactContainer {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center; /* Centra las columnas apiladas */
+  }
+  .formInfoColumn,
+  .contactInfoColumn {
+    min-width: unset;
+    width: 100%;
+    max-width: 500px; /* Limita el ancho en tablet */
+    text-align: center; /* Centra el texto del formulario */
+  }
+  .mainTitle {
+    font-size: 2.5em;
+  }
+  .subtitle {
+    font-size: 1.1em;
+  }
+  .contactForm {
+    align-items: center; /* Centra los campos del formulario en tablet */
+  }
+  .inputField,
+  .textareaField {
+    max-width: 100%; /* Asegura que ocupen el ancho completo de la columna */
+  }
+  .submitButton {
+    align-self: center; /* Centra el botón */
+  }
+  .contactInfoColumn {
+    text-align: center; /* Centra la info de contacto en tablet */
+    padding-top: 50px; /* Espacio extra si el icono de fondo es muy grande */
+  }
+  .contactDetail {
+    flex-direction: column; /* Apila icono y texto en móvil para mejor legibilidad */
+    align-items: center;
+    gap: 5px;
+  }
+  .detailIcon {
+    margin-bottom: 5px;
+  }
+  .infoBackgroundIcon {
+    font-size: 12em; /* Reducir tamaño de icono de fondo */
+  }
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 50px 15px;
+  }
+  .mainTitle {
+    font-size: 2em;
+  }
+  .subtitle {
+    font-size: 1em;
+  }
+  .inputField,
+  .textareaField {
+    padding: 12px 15px;
+    font-size: 1em;
+  }
+  .submitButton {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+  .infoTitle {
+    font-size: 1.6em;
+  }
+  .contactDetail p,
+  .contactDetail a {
+    font-size: 1em;
+  }
+  .detailIcon {
+    font-size: 1.8em;
+  }
+  .infoBackgroundIcon {
+    font-size: 10em;
+  }
+}
+
+@media (max-width: 576px) {
+  .contactSection {
+    padding: 40px 10px;
+  }
+  .mainTitle {
+    font-size: 1.8em;
+  }
+  .subtitle {
+    font-size: 0.9em;
+  }
+  .textareaField {
+    min-height: 100px;
+  }
+  .infoBackgroundIcon {
+    font-size: 8em;
+  }
+}

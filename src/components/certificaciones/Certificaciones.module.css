@@ -1,38 +1,189 @@
+/* src/components/Certificaciones.module.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
 .certSection {
-  background-color: #f9f9f9;
-  padding: 50px 130px;
-
+  background-color: #f8fafd;
+  padding: 80px 20px;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  /* Añadido: Posicionamiento relativo para los puntos si se usan absolutos */
+  position: relative; /* Importante para que 'bottom' funcione con slick-dots */
 }
 
-.title {
-  color: #232e26;
-  font-size: 1.6rem;
+.mainTitle {
+  font-size: 2.8em;
   font-weight: 700;
-  margin-bottom: 30px;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #1a2c4e;
+  margin-bottom: 15px;
+  line-height: 1.2;
 }
 
-.logoGrid {
-  display: flex;
-  flex-wrap: wrap;
+.mainSubtitle {
+  font-size: 1.2em;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 60px auto; /* Mantener este margen antes del slider */
+  line-height: 1.6;
+}
+
+.sliderWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  /* Ajustar el margin-bottom del sliderWrapper para el espacio con los dots */
+  margin-bottom: 40px; /* Suficiente espacio para los dots sin <br> */
+}
+
+.slide {
+  padding: 0 15px;
+  display: flex !important;
   justify-content: center;
-  gap: 100px;
   align-items: center;
+  height: 120px;
 }
 
 .certLogo {
   max-height: 80px;
-  max-width: 140px;
+  max-width: 160px;
   object-fit: contain;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease, transform 0.3s ease;
-  cursor: pointer; /* para indicar que es interactivo */
+  filter: grayscale(100%) brightness(0.9);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
 }
 
 .certLogo:hover {
-  filter: none;
-  transform: scale(1.1); /* agranda un 10% */
-  z-index: 10; /* para que quede arriba de otros elementos */
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.15);
+}
+
+/* --- ESTILOS PARA LOS PUNTOS DEL CARRUSEL (DOTS) --- */
+/* Sobrescribimos los estilos por defecto de slick-theme.css */
+.certSection :global(.slick-dots) {
+  /* top: auto; /* Asegúrate de que no haya un 'top' que lo ponga arriba */
+  bottom: 10px; /* Posicionar los puntos más arriba, cerca del carrusel */
+  position: absolute; /* Para que 'bottom' funcione relativo a .certSection */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Eliminar márgenes por defecto */
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.certSection :global(.slick-dots li) {
+  margin: 0 8px; /* Aumentar el espacio entre los puntos para más claridad */
+  width: 12px; /* Ligeramente más grandes */
+  height: 12px; /* Ligeramente más grandes */
+  display: flex; /* Para centrar el botón dentro del li */
+  justify-content: center;
+  align-items: center;
+}
+
+.certSection :global(.slick-dots li button) {
+  width: 100%; /* El botón ocupa todo el li */
+  height: 100%;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #a4c9e1; /* Un azul más visible pero aún suave */
+  border: none;
+  cursor: pointer;
+  opacity: 0.8; /* Ligeramente transparente */
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  /* Eliminar texto del botón si existe */
+  font-size: 0; /* Ocultar el texto "1", "2", etc. si slick lo genera */
+  line-height: 0;
+}
+
+.certSection :global(.slick-dots li button:before) {
+    /* Esto es para eliminar el contenido por defecto de slick (los números) */
+    content: '';
+    display: none;
+}
+
+
+.certSection :global(.slick-dots li.slick-active button) {
+  background-color: #0382a1; /* Tu azul principal para el punto activo */
+  transform: scale(1.3); /* Un poco más de zoom para que se note */
+  opacity: 1;
+}
+
+.certSection :global(.slick-dots li button:hover) {
+  background-color: #01738f; /* Un azul más oscuro en hover */
+  opacity: 1;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* --- MEDIA QUERIES --- */
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .certSection { padding: 60px 15px; }
+  .mainTitle { font-size: 2.2em; }
+  .mainSubtitle {
+    font-size: 1.1em;
+    margin-bottom: 50px;
+  }
+  .sliderWrapper {
+    margin-bottom: 30px; /* Ajuste en tablet */
+  }
+  .slide { height: 100px; }
+  .certLogo {
+    max-height: 70px;
+    max-width: 140px;
+  }
+  .certSection :global(.slick-dots) {
+    bottom: 5px; /* Ajuste en tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .certSection { padding: 50px 10px; }
+  .mainTitle { font-size: 1.8em; }
+  .mainSubtitle {
+    font-size: 1em;
+    margin-bottom: 40px;
+  }
+  .sliderWrapper {
+    margin-bottom: 25px; /* Ajuste en móvil grande */
+  }
+  .slide { height: 90px; }
+  .certLogo {
+    max-height: 60px;
+    max-width: 120px;
+  }
+  .certSection :global(.slick-dots) {
+    bottom: 0px; /* Ajuste en móvil grande */
+  }
+}
+
+@media (max-width: 576px) {
+  .certSection { padding: 40px 10px; }
+  .mainTitle { font-size: 1.6em; }
+  .mainSubtitle {
+    font-size: 0.9em;
+    margin-bottom: 30px;
+  }
+  .sliderWrapper {
+    margin-bottom: 20px; /* Ajuste en móvil pequeño */
+  }
+  .slide { padding: 0 10px; height: 80px; }
+  .certLogo {
+    max-height: 50px;
+    max-width: 100px;
+  }
+  .certSection :global(.slick-dots) {
+    bottom: 0px; /* Ajuste en móvil pequeño */
+  }
+  .certSection :global(.slick-dots li) {
+    width: 10px; /* Ligeramente más visibles en móvil */
+    height: 10px;
+    margin: 0 5px;
+  }
+  .certSection :global(.slick-dots li.slick-active button) {
+    transform: scale(1.2); /* Menos zoom en móvil si se ve demasiado grande */
+  }
 }

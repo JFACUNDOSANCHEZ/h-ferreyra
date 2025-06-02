@@ -23,8 +23,8 @@ export default function Home() {
       <BannerYT />
       <Reviews />
       <Certificaciones />
-      <Footer />
-      <WhatsappButton />
+      {/* <Footer /> */}
+   
     </>
   )
 }

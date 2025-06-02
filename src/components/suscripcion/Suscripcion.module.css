@@ -1,0 +1,206 @@
+/* src/components/SubscriptionCTA/suscripcion.module.css */
+
+.subscriptionSection {
+  padding: 100px 20px; /* Padding generoso */
+  background-color: #f8fafd; /* Fondo muy claro, consistente */
+  font-family: 'Inter', sans-serif; /* Consistencia de fuente */
+  color: #333; /* Color de texto general */
+}
+
+.subscriptionContainer {
+  max-width: 1200px; /* Ancho máximo para el contenido */
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+  align-items: center;
+  gap: 60px; /* Espacio entre el contenido de texto/botones y el video */
+}
+
+.subscriptionContent {
+  flex: 1; /* Ocupa espacio flexible */
+  min-width: 350px; /* Ancho mínimo para el contenido de texto */
+  text-align: left; /* Alineación del texto a la izquierda */
+}
+
+/* --- TÍTULO PRINCIPAL (H2) --- */
+.mainTitle {
+  font-size: 3.2em;
+  color: #1a2c4e; /* Azul oscuro corporativo */
+  margin-bottom: 25px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* --- SUBTÍTULO PRINCIPAL (P) --- */
+.mainSubtitle {
+  font-size: 1.3em;
+  color: #555;
+  margin-bottom: 50px; /* Espacio antes de la cuadrícula de beneficios */
+  line-height: 1.6;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 2 columnas en desktop, se adapta */
+  gap: 30px; /* Espacio entre los ítems de beneficio */
+  margin-bottom: 50px; /* Espacio antes de los botones */
+}
+
+.benefitItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los ítems de beneficio a la izquierda */
+  text-align: left;
+}
+
+/* --- CONTENEDOR DE ICONO --- */
+.iconContainer {
+  font-size: 3.5em; /* Tamaño grande para los iconos */
+  margin-bottom: 15px;
+  color: #0382a1; /* ¡Tu color principal para los iconos! */
+  line-height: 1;
+}
+
+.benefitItem h3 {
+  font-size: 1.4em;
+  color: #2c3e50; /* Azul oscuro para los títulos de beneficio */
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.benefitItem p {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.6;
+}
+
+.callToAction {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los botones se envuelvan */
+  gap: 20px; /* Espacio entre los botones */
+  margin-bottom: 30px; /* Espacio antes del texto de garantía */
+}
+
+/* --- ESTILO BASE DEL BOTÓN --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 30px;
+  font-weight: bold;
+  font-size: 1.05em;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  white-space: nowrap; /* Evita que el texto del botón se rompa */
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* --- BOTÓN PRIMARIO (COLOR CORAL / AZUL OSCURO DEL GRADIENTE) --- */
+.colorPrimary {
+  background-color: #0382a1; /* Primer color de tu gradiente del navbar */
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.colorPrimary:hover {
+  background-color: #01738f; /* Segundo color de tu gradiente del navbar para el hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- ICONO DENTRO DEL BOTÓN --- */
+.btnIcon {
+  font-size: 1.2em;
+}
+
+/* --- BOTÓN SECUNDARIO (BLANCO / AZUL OSCURO) --- */
+.btnSecondary {
+  background-color: white;
+  color: #0382a1; /* Texto/icono en tu color principal */
+  border: 1px solid #0382a1; /* Borde del mismo color */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btnSecondary:hover {
+  background-color: #f0f0f0; /* Un gris muy claro para el hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.guaranteeText {
+  font-size: 0.95em;
+  color: #777;
+}
+
+.contactLink {
+  color: #0382a1; /* Color azul para el enlace de contacto */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: #01738f; /* Un azul más oscuro en hover */
+  text-decoration: underline;
+}
+
+.subscriptionImage {
+  flex: 1.5; /* El video puede ocupar un poco más de espacio */
+  min-width: 400px; /* Ancho mínimo para el video */
+  max-width: 600px; /* Ancho máximo para el video */
+  display: flex; /* Para centrar el video dentro de su columna */
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px; /* Bordes redondeados para el contenedor del video */
+  overflow: hidden; /* Asegura que el video respete el border-radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra para el video */
+}
+
+.ctaVideo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --------------------------------------------------------------------- */
+/* --- MEDIA QUERIES --- */
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .subscriptionSection { padding: 80px 20px; }
+  .subscriptionContainer { flex-direction: column; gap: 40px; }
+  .subscriptionContent { text-align: center; } /* Centrar contenido en tablet */
+  .mainTitle { font-size: 2.8em; }
+  .mainSubtitle { font-size: 1.1em; }
+  .benefitsGrid { grid-template-columns: 1fr; gap: 20px; } /* Una columna en tablet */
+  .benefitItem { align-items: center; text-align: center; } /* Centrar items en tablet */
+  .iconContainer { font-size: 3em; }
+  .benefitItem h3 { font-size: 1.3em; }
+  .benefitItem p { font-size: 0.9em; }
+  .callToAction { justify-content: center; width: 100%; } /* Centrar botones */
+  .btn { padding: 14px 25px; font-size: 1em; }
+  .subscriptionImage { min-width: unset; width: 90%; max-width: 500px; }
+}
+
+@media (max-width: 768px) {
+  .subscriptionSection { padding: 60px 15px; }
+  .mainTitle { font-size: 2.2em; margin-bottom: 20px; }
+  .mainSubtitle { font-size: 1em; margin-bottom: 40px; }
+  .benefitItem { padding: 0 10px; } /* Reducir padding horizontal para items */
+  .callToAction { flex-direction: column; align-items: center; } /* Apilar botones */
+  .btn { width: 100%; max-width: 280px; } /* Botones de ancho completo */
+  .guaranteeText { font-size: 0.9em; }
+}
+
+@media (max-width: 576px) {
+  .subscriptionSection { padding: 40px 10px; }
+  .mainTitle { font-size: 1.8em; }
+  .mainSubtitle { font-size: 0.9em; }
+  .iconContainer { font-size: 2.5em; }
+  .benefitItem h3 { font-size: 1.1em; }
+  .benefitItem p { font-size: 0.85em; }
+}

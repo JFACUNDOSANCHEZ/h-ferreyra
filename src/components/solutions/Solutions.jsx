@@ -35,13 +35,13 @@ export default function SolutionsSection() {
     </video> */}
       <h2 className={styles.title}>SOLUCIONES DIGITALES</h2>
       <br />
+     
+    <p className={styles.subtitle}>
+       Software con tecnología médica avanzada para diagnósticos más rápidos, seguros y desde cualquier lugar.
+      </p> 
       <br />
       <br />
-      <br />
-      {/* <p className={styles.subtitle}>
-        Todas las soluciones necesarias para su centro o servicio de diagnóstico por imágenes, instalados en la nube o en la institución.
-      </p> */}
-      <br />
+     
       <div className={styles.cardsContainer}>
         {solutions.map((item, idx) => (
           <div key={idx} className={styles.card}>

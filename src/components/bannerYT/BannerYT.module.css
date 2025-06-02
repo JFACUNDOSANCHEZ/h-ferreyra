@@ -1,51 +1,180 @@
-.banner {
-    background-color: #0382a1;
-    padding: 4rem;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-   background: linear-gradient(90deg, #0382a1 0%, #147d8c 100%);
-  }
-  
-  .content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6rem;
-  }
-  
-  .videoWrapper {
-    flex: 1;
-    min-width: 300px;
-    height: 300px;
-  }
-  
-  .textWrapper {
-    flex: 1;
-    min-width: 300px;
-  }
-  
-  .bh2 {
-    font-size: 1.8rem;
-    margin: 1rem auto 4rem auto; /* Márgenes arriba y abajo fijos, automáticos a izquierda y derecha para centrar */
-    max-width: 600px; /* Opcional, para limitar el ancho */
-    text-align: center; /* Centra el texto dentro del contenedor */
-  }
-  
-  
+/* src/components/BannerYT/BannerYT.module.css */
 
-  
-  .bp {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+.banner {
+  padding: 100px 20px; /* Padding generoso */
+  background: linear-gradient(90deg, #0382a1 0%, #01738f 100%); /* Tu gradiente del navbar */
+  color: white; /* Color de texto claro para el fondo oscuro */
+  font-family: 'Inter', sans-serif; /* ¡Consistencia en la fuente! */
+  text-align: center; /* Centrar todo el contenido */
+}
+
+.mainTitle {
+  font-size: 3.2em; /* Tamaño de título consistente con otras secciones */
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: white; /* Blanco para contraste con el fondo azul */
+  max-width: 900px; /* Limitar el ancho para legibilidad */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mainSubtitle {
+  font-size: 1.3em; /* Subtítulo consistente */
+  margin-bottom: 60px; /* Espacio antes del contenido principal */
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9); /* Blanco un poco más suave */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+  justify-content: center; /* Centrar los elementos en la fila */
+  align-items: center;
+  gap: 50px; /* Espacio entre el video y el texto */
+  max-width: 1200px; /* Ancho máximo para el wrapper */
+  margin: 0 auto; /* Centrar el wrapper en la sección */
+}
+
+.videoWrapper {
+  flex: 2; /* El video ocupará más espacio */
+  min-width: 380px; /* Tamaño mínimo para el video */
+  max-width: 700px; /* Tamaño máximo para el video */
+  aspect-ratio: 16 / 9; /* Relación de aspecto estándar para videos */
+  background-color: #000; /* Fondo negro mientras carga el video */
+  border-radius: 12px; /* Bordes redondeados para el reproductor */
+  overflow: hidden; /* Asegura que el iframe respete el border-radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra para resaltar el video */
+}
+
+.videoWrapper iframe {
+  width: 100%;
+  height: 100%;
+  display: block; /* Elimina posibles espacios extra del iframe */
+}
+
+.textColumn {
+  flex: 1; /* El texto ocupará menos espacio */
+  min-width: 300px; /* Tamaño mínimo para el texto */
+  max-width: 450px; /* Tamaño máximo para el texto */
+  text-align: left; /* Alineación de texto a la izquierda */
+  color: white; /* Color de texto blanco */
+}
+
+.descriptionText {
+  font-size: 1.15em; /* Tamaño de fuente legible */
+  line-height: 1.7;
+  margin-bottom: 40px; /* Espacio antes del botón */
+  color: rgba(255, 255, 255, 0.95); /* Blanco ligeramente más suave */
+}
+
+/* --- ESTILO DEL BOTÓN - Consistente con CallToActionSection --- */
+.actionButton {
+  background-color: white; /* Botón blanco para contrastar con el fondo oscuro */
+  color: #0382a1; /* Color principal del gradiente para el texto/icono del botón */
+  display: inline-flex; /* Usar inline-flex para el botón */
+  align-items: center;
+  gap: 10px;
+  padding: 16px 30px;
+  font-weight: bold;
+  font-size: 1.05em;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra para el botón */
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.actionButton:hover {
+  background-color: #e0e0e0; /* Un gris muy claro para el hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.buttonIcon {
+  font-size: 1.2em;
+}
+
+/* --------------------------------------------------------------------- */
+/* --- MEDIA QUERIES --- */
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .banner {
+    padding: 80px 20px;
   }
-  
-  .button {
-    background-color: #e7e7e7;
-    color: rgb(16, 58, 19);
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
+  .mainTitle {
+    font-size: 2.8em;
   }
-  
+  .mainSubtitle {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+  }
+  .contentWrapper {
+    flex-direction: column; /* Apilar video y texto en tablet */
+    gap: 40px;
+  }
+  .videoWrapper {
+    min-width: unset; /* Quitar min-width fijo */
+    width: 90%; /* Ancho relativo en tablet */
+    max-width: 600px;
+  }
+  .textColumn {
+    text-align: center; /* Centrar texto en tablet */
+    min-width: unset;
+    width: 90%;
+    max-width: 500px;
+  }
+  .descriptionText {
+    font-size: 1.05em;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 60px 15px;
+  }
+  .mainTitle {
+    font-size: 2.2em;
+  }
+  .mainSubtitle {
+    font-size: 1em;
+  }
+  .videoWrapper {
+    width: 100%; /* Ancho completo en móvil */
+    max-width: 450px;
+  }
+  .textColumn {
+    width: 100%;
+    max-width: 400px;
+  }
+  .descriptionText {
+    font-size: 0.95em;
+    margin-bottom: 30px;
+  }
+  .actionButton {
+    padding: 14px 25px;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner {
+    padding: 40px 10px;
+  }
+  .mainTitle {
+    font-size: 1.8em;
+  }
+  .mainSubtitle {
+    font-size: 0.9em;
+  }
+  .videoWrapper {
+    aspect-ratio: 4 / 3; /* Un poco menos ancho en móviles pequeños si es necesario */
+  }
+}

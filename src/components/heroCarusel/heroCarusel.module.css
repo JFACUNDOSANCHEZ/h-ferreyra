@@ -1,8 +1,9 @@
 .carousel {
   height: 100vh;
   width: 100%;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 100;
+  /* --- APLICAMOS LA MISMA FUENTE GENERAL DE SUSCRIPCION --- */
+  font-family: 'Inter', sans-serif; /* Mismo que .subscriptionSection */
+  font-weight: 100; /* Puedes ajustar este peso si no es el deseado para el texto base */
 }
 
 .slide {
@@ -20,45 +21,112 @@
   content: "";
   position: absolute;
   inset: 0;
-   background: linear-gradient(
-  to right,
-  rgba(255, 255, 255, 0.986) 0%,
-  rgb(252, 252, 252) 40%,
-  rgba(7, 6, 6, 0) 100%
-); 
+  /* Mantén el gradiente que ya tienes si es el efecto deseado */
+  
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.986) 0%,
+    rgb(252, 252, 252) 40%,
+    rgba(7, 6, 6, 0) 100%
+  );
   z-index: 1;
 }
 
 .overlay {
-  color: rgb(0, 0, 0);
+  color: #333; /* Color general de texto, como en .subscriptionSection */
   position: relative;
   z-index: 2;
   padding: 2rem;
-
   max-width: 600px;
   margin-left: 5%;
-  margin-top: 19rem;
-  
+  margin-top: 19rem; /* Mantén este margen si es parte de tu diseño */
 }
 
-
-
+/* --- TÍTULO DEL CARRUSEL (H2) - Adaptado del h2 de .subscriptionContent --- */
 .overlay h2 {
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
+  font-size: 3.2em; /* MISMO TAMAÑO QUE EL H2 DE .subscriptionContent */
+  color: #16283F; /* MISMO COLOR QUE EL H2 DE .subscriptionContent */
+  margin-bottom: 25px; /* Ajustado para consistencia, era 1rem */
+  line-height: 1.2; /* Para consistencia */
+  font-weight: 700; /* MISMO PESO QUE EL H2 DE .subscriptionContent */
 }
 
+/* --- PÁRRAFO DEL CARRUSEL (P) - Adaptado del .subtitle de Suscripcion --- */
 .overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1.3em; /* MISMO TAMAÑO QUE EL .subtitle DE SUSCRIPCION */
+  color: #555; /* MISMO COLOR QUE EL .subtitle DE SUSCRIPCION */
+  margin-bottom: 40px; /* Ajustado para consistencia, era 1rem */
+  line-height: 1.6; /* Para consistencia */
 }
 
+/* --- BOTÓN DEL CARRUSEL - Adaptado de .btn .colorPrimary de Suscripcion --- */
 .overlay button {
-  padding: 0.75rem 1.5rem;
-  background-color:#2e2e2e;
-  color: rgb(255, 255, 255);
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 20px;
+  padding: 16px 30px; /* MISMO PADDING QUE BOTONES DE SUSCRIPCION */
+  background-color: #007bff; /* MISMO BACKGROUND-COLOR QUE .colorPrimary */
+  color: white; /* MISMO COLOR QUE .colorPrimary */
+  border: none; /* Ya lo tienes */
+  font-weight: bold; /* MISMO PESO QUE BOTONES DE SUSCRIPCION */
+  cursor: pointer; /* Ya lo tienes */
+  border-radius: 50px; /* MISMO BORDER-RADIUS QUE BOTONES DE SUSCRIPCION, era 20px */
+  font-size: 1.05em; /* MISMO TAMAÑO QUE BOTONES DE SUSCRIPCION */
+  /* Agregamos las transiciones y sombra para que se vea como los otros botones */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.overlay button:hover {
+  background-color: #0056b3; /* Color de hover de .colorPrimary */
+  transform: translateY(-3px); /* Efecto de hover de .colorPrimary */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Sombra de hover de .colorPrimary */
+}
+
+/* --------------------------------------------------------------------- */
+/* --- MEDIA QUERIES PARA RESPONSIVIDAD (Ajusta si es necesario) --- */
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .overlay h2 {
+    font-size: 2.8em; /* Mismo que h2 de Suscripcion en móvil */
+  }
+  .overlay p {
+    font-size: 1.1em; /* Mismo que .subtitle de Suscripcion en móvil */
+  }
+  .overlay button {
+    padding: 14px 25px; /* Ajuste para móviles */
+    font-size: 1em;
+  }
+  .overlay {
+    margin-top: 15rem; /* Ajusta este margen si el contenido se solapa */
+    max-width: 90%;
+    margin-left: 5%; /* Centrar o mantener margen a la izquierda */
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay h2 {
+    font-size: 2.2em; /* Mismo que h2 de Suscripcion en móvil más pequeño */
+  }
+  .overlay p {
+    font-size: 1em; /* Mismo que .subtitle de Suscripcion en móvil más pequeño */
+  }
+  .overlay {
+    margin-top: 10rem; /* Ajusta el margen según sea necesario */
+  }
+}
+
+@media (max-width: 576px) {
+  .overlay h2 {
+    font-size: 1.8em; /* Mismo que h2 de Suscripcion en móvil muy pequeño */
+  }
+  .overlay p {
+    font-size: 0.9em; /* Mismo que .subtitle de Suscripcion en móvil muy pequeño */
+  }
+  .overlay {
+    padding: 1rem; /* Reduce el padding */
+    margin-left: 2%;
+    margin-top: 5rem; /* O ajusta a tu preferencia */
+  }
+  .overlay button {
+    width: 100%; /* Botón de ancho completo en móviles muy pequeños */
+  }
 }

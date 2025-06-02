@@ -1,5 +1,75 @@
-/* Animación de entrada */
-@keyframes slideDown {
+/* src/components/Navbar/Navbar.module.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+/* Si usas 'Roboto' en algún lugar, asegúrate de importarlo también */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
+
+
+/* --- PRE-NAV (BARRA SUPERIOR) --- */
+.preNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8fafd; /* Fondo muy claro, similar a otras secciones */
+  color: #4a5a6a; /* Color de texto más suave */
+  padding: 0.6rem 20px; /* Ajustado el padding para más espacio */
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+  z-index: 1001;
+  font-family: 'Inter', sans-serif; /* Usamos la fuente principal */
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Transición suave */
+  box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+}
+
+/* Animación para esconder el preNav */
+.prenavHidden {
+  transform: translateY(-100%); /* Desliza hacia arriba para esconder */
+  opacity: 0;
+  pointer-events: none; /* Deshabilita interacciones cuando está oculto */
+}
+
+.preNav p {
+  margin: 0; /* Elimina el margen por defecto del párrafo */
+  display: flex; /* Para centrar contenido si es necesario */
+  align-items: center;
+  gap: 8px; /* Espacio entre Tel y el número */
+  font-weight: 600; /* Un poco más de peso */
+  color: #1a2c4e; /* Color más oscuro para el teléfono */
+}
+
+.socialIcons {
+  padding: 0; /* Eliminado el padding que podía causar desbordamiento */
+  display: flex;
+  align-items: center;
+}
+
+.socialIcons a {
+  margin: 0 8px; /* Espacio entre iconos */
+  font-size: 1.2rem; /* Tamaño de los iconos, 20px es 1.25rem */
+  transition: color 0.3s ease, transform 0.3s ease; /* Transición para el hover */
+}
+
+/* Colores de iconos sociales coherentes con tu paleta o marcas */
+.twitter { color: #1a2c4e; /* Tu azul oscuro o azul de marca */ }
+.youtube { color: #1a2c4e; }
+.whatsapp { color: #1a2c4e; } /* Tu azul oscuro */
+
+.socialIcons a:hover {
+  transform: translateY(-2px); /* Pequeño efecto hover */
+}
+/* Colores de hover más vivos para los iconos */
+.socialIcons a:hover.twitter { color: #1DA1F2; }
+.socialIcons a:hover.youtube { color: #FF0000; }
+.socialIcons a:hover.whatsapp { color: #25D366; }
+
+
+/* --- NAVBAR PRINCIPAL --- */
+/* Animación de entrada del navbar (cuando la página carga o cuando se esconde el preNav) */
+@keyframes slideDownNavbar {
   from {
     transform: translateY(-100%);
     opacity: 0;
@@ -9,64 +79,44 @@
     opacity: 1;
   }
 }
-.preNav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #222;
-  color: #ddd;
-  padding: 0.4rem 1rem;
-  font-size: 0.85rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #444;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  z-index: 1001;
-}
-
-.prenavHidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
 
 .navbar {
-  margin-top: 1rem;
+  margin-top: 2.7rem; /* Ajuste para que el navbar empiece debajo del preNav */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 40px; /* Más padding horizontal para que no se pegue a los bordes */
   position: fixed;
-  top: 1.7rem;
+  top: 0; /* Siempre en top 0, su posición inicial es manejada por margin-top */
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient(90deg, #0382a1 0%, #01738f 100%);
+  background: linear-gradient(90deg, #0382a1 0%, #01738f 100%); /* Tu gradiente azul principal */
   color: white;
-  height: 5rem;
-  animation: slideDown 0.5s ease forwards;
+  height: 5.5rem; /* Un poco más alto para presencia */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra más definida */
+  animation: slideDownNavbar 0.5s ease forwards; /* Animación al cargar */
+  transition: all 0.4s ease; /* Transición suave para todos los cambios de estado */
+  box-sizing: border-box; /* IMP: Asegura que el padding no cause desbordamiento */
 }
 
 .scrolled {
-  background: rgba(3, 130, 161, 0.75);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  top: 0;
-  height: 5rem;
-  margin-top: 0;
-  transition: all 0.4s ease;
+  background:#0381a19a; /* Azul muy oscuro de tu paleta con opacidad para el scroll */
+  backdrop-filter: blur(8px); /* Blur para el efecto glassy */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Sombra más fuerte al hacer scroll */
+  top: 0; /* Se pegará al top */
+  height: 4.5rem; /* Se hace ligeramente más pequeño al hacer scroll */
+  margin-top: 0; /* Se mueve a la parte superior */
 }
 
 .logo {
-  font-size: 2rem;
-  margin-left: 5rem;
-  font-weight: bold;
-  color: #f1f1f1;
+  font-size: 2.2rem; /* Tamaño de logo más grande */
+  margin-left: 0; /* Elimina margen izquierdo, el padding del navbar lo controla */
+  font-weight: 800; /* Más peso para el logo de texto */
+  color: #e6f2f6; /* Color de logo más claro para contraste */
   letter-spacing: 1px;
   transition: transform 0.3s ease;
+  font-family: 'Inter', sans-serif; /* Consistencia de fuente */
 }
 
 .logo:hover {
@@ -74,26 +124,32 @@
 }
 
 .imge {
-  width: 6rem;
-  border-radius: 40%;
+  width: 5.5rem; /* Tamaño ajustado para un logo de imagen */
+  height: auto;
+  border-radius: 50%; /* Si quieres que sea circular */
+  object-fit: contain; /* Asegura que la imagen se ajuste */
 }
 
 .navLinks {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px; /* Más espacio entre enlaces */
   font-size: 1rem;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif; /* Consistencia de fuente */
+  font-weight: 600; /* Peso de fuente para enlaces */
+  margin: 0; /* Eliminar margen predeterminado de ul */
+  padding: 0; /* Eliminar padding predeterminado de ul */
 }
 
 .navLinks li a {
   position: relative;
-  color: #f7f7f7;
+  color: #e6f2f6; /* Color de enlaces más claro */
   padding: 8px 12px;
   text-decoration: none;
   transition: color 0.3s ease;
   overflow: hidden;
+  text-transform: uppercase; /* Para un look más profesional */
+  letter-spacing: 0.5px;
 }
 
 .navLinks li a::after {
@@ -102,15 +158,15 @@
   bottom: 0;
   left: 50%;
   width: 0;
-  height: 2px;
-  background-color: #bbdff0;
+  height: 3px; /* Línea más gruesa para resaltar */
+  background-color: #bbdff0; /* Azul claro para la línea hover */
   transition: width 0.3s ease, left 0.3s ease;
   border-radius: 2px;
 }
 
 .navLinks li a:hover {
-  color: #d1f3ff;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  color: #bbdff0; /* Azul claro para el hover del texto */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Sombra más fuerte al hover */
 }
 
 .navLinks li a:hover::after {
@@ -122,99 +178,118 @@
   position: relative;
 }
 
-.menuItem a {
-  color: black;
-  text-decoration: none;
-  font-weight: 100;
-  font-size: 1.1rem;
-  padding: 10px 5px;
-  display: block;
-  font-family: 'Roboto', sans-serif;
-}
-
+/* Reajustar estilos para el submenu */
 .submenu {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 5px); /* Un poco más abajo para espacio */
   left: 0;
-  background-color: #ffffff;
+  background-color: #ffffff; /* Fondo blanco para el submenú */
   border-radius: 8px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  min-width: 170px;
-  padding: 5px 0;
-  z-index: 1000;
-  transform: translateY(0);
-  transition: transform 0.2s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra para el submenú */
+  min-width: 200px; /* Ancho mínimo para el submenú */
+  padding: 10px 0; /* Más padding interno */
+  z-index: 1002; /* Asegura que esté por encima de todo */
+  opacity: 0; /* Para la animación de fade-in */
+  transform: translateY(10px); /* Para la animación de slide */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* Deshabilita clics cuando no está visible */
 }
 
 .submenu li a {
-  padding: 8px 15px;
-  font-size: 0.95rem;
-  color: #115763;
+  padding: 10px 20px; /* Más padding para los ítems del submenú */
+  font-size: 1rem; /* Tamaño de fuente estándar */
+  color: #1a2c4e; /* Tu azul oscuro para los enlaces del submenú */
+  white-space: nowrap; /* Evita que el texto se rompa */
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 400; /* Peso normal */
+}
+
+.submenu li a:hover {
+  background-color: #e6f2f6; /* Fondo azul claro al pasar el mouse */
+  color: #0382a1; /* Tu azul principal al pasar el mouse */
+  text-shadow: none; /* Quitar la sombra de texto en submenú */
 }
 
 .menuItem:hover .submenu {
   display: block;
-  transform: translateY(5px);
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Slide up */
+  pointer-events: auto; /* Habilita clics */
 }
 
-.socialIcons{
-padding: 0px 40px;
-
-}
-.socialIcons a {
-  margin: 0 10px;
-  font-size: 20px;
-  transition: color 0.3s ease;
-}
-
-/* Colores oficiales */
-.facebook {
-  color: #1877F2; /* azul Facebook */
+/* --- MEDIA QUERIES --- */
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 0 30px;
+  }
+  .navLinks {
+    gap: 20px;
+  }
 }
 
-.instagram {
-  /* Instagram es un degradado, pero aquí un color aproximado */
-  color: #E4405F;
+@media (max-width: 992px) {
+  .preNav {
+    padding: 0.5rem 15px;
+    font-size: 0.75rem;
+  }
+  .socialIcons a {
+    margin: 0 5px;
+    font-size: 1rem;
+  }
+
+  .navbar {
+    padding: 0 20px;
+    height: 5rem;
+  }
+  .scrolled {
+    height: 4.5rem;
+  }
+  .logo {
+    font-size: 1.8rem;
+  }
+  .imge {
+    width: 4.5rem;
+  }
+  /* Ocultar navLinks y preparar para un menú hamburguesa */
+  .navLinks {
+    display: none; /* Esto oculta el menú normal en móviles */
+  }
+  /* Aquí necesitarías implementar un componente de menú hamburguesa */
 }
 
-.linkedin {
-  color: #0A66C2;
+@media (max-width: 768px) {
+  .preNav {
+    flex-direction: column; /* Apilar en columnas */
+    padding: 0.4rem 10px;
+  }
+  .preNav p {
+    margin-bottom: 5px;
+  }
+  .socialIcons {
+    margin-top: 5px;
+  }
 }
 
-/* Opcional: cambia color al pasar el mouse */
-.socialIcons a:hover.facebook {
-  color: #145dbf;
-}
-
-.socialIcons a:hover.instagram {
-  color: #c83655;
-}
-
-.socialIcons a:hover.linkedin {
-  color: #084c9e;
-}
-
-.twitter {
-  color: #1DA1F2;
-}
-
-.twitter:hover {
-  filter: brightness(0.8);
-}
-
-.youtube {
-  color: #FF0000;
-}
-
-.youtube:hover {
-  filter: brightness(0.8);
-}
-
-.whatsapp {
-  color: #25D366;
-}
-
-.whatsapp:hover {
-  filter: brightness(0.8);
+@media (max-width: 576px) {
+  .preNav {
+    font-size: 0.7rem;
+    padding: 0.3rem 5px;
+  }
+  .socialIcons a {
+    margin: 0 3px;
+    font-size: 0.9rem;
+  }
+  .navbar {
+    height: 4rem;
+  }
+  .scrolled {
+    height: 3.5rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .imge {
+    width: 4rem;
+  }
 }

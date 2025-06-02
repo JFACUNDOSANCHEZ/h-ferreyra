@@ -1,32 +1,155 @@
-.container {
-  background-color: #ffffffda; /* fondo naranja */
-    padding: 100px ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* src/components/CallToActionSection/CallToActionSection.module.css */
+
+.ctaSection {
+  padding: 100px 20px; /* Un poco más de padding vertical para que respire */
+  background-color: #f0f4f8; /* Un fondo muy sutil, ligeramente diferente al f8fafd */
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.ctaContainer {
+  max-width: 800px; /* Ancho más estrecho para enfocar el contenido */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* Menos gap ya que hay menos elementos */
+}
+
+.contentWrapper {
+  width: 100%;
+  text-align: center;
+}
+
+/* --- TÍTULO PRINCIPAL DE LA SECCIÓN (H2) --- */
+.mainTitle {
+  font-size: 3em; /* Un poco menos grande que antes, para un look más sereno */
+  color: #1a2c4e; /* Azul oscuro corporativo, excelente contraste */
+  margin-bottom: 20px; /* Espacio antes de la descripción */
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* --- DESCRIPCIÓN PRINCIPAL (P) --- */
+.mainDescription {
+  font-size: 1.2em; /* Un poco más pequeña que antes */
+  color: #555;
+  margin-bottom: 40px; /* Más espacio antes del botón */
+  line-height: 1.6;
+  max-width: 700px; /* Limitar el ancho para legibilidad */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Estas clases (benefitsGrid, benefitCard, benefitIcon, benefitTitle, benefitText)
+     YA NO SE USAN en el JSX simplificado, puedes ELIMINARLAS o comentarlas.
+     Las he dejado comentadas aquí para referencia, pero no son necesarias.
+*/
+/*
+.benefitsGrid { display: none; }
+.benefitCard { display: none; }
+.benefitIcon { display: none; }
+.benefitTitle { display: none; }
+.benefitText { display: none; }
+*/
+
+
+/* --- CONTENEDOR DEL BOTÓN --- */
+.buttonWrapper {
+  margin-top: 0; /* Eliminar el margen superior ya que .mainDescription tiene bottom-margin */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* --- ESTILO DEL BOTÓN - ¡Color a juego con el NAV BAR! --- */
+.actionButton {
+  background-color: #0382a1; /* ¡Primer color de tu gradiente del navbar! */
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Aumentado ligeramente para mejor espacio visual */
+  padding: 18px 35px; /* Un poco más de padding para que se vea más robusto */
+  font-weight: bold;
+  font-size: 1.1em; /* Un poco más grande para el texto del botón */
+  border: none;
+  border-radius: 50px; /* Borde bien redondeado */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Sombra un poco más definida */
+  white-space: nowrap;
+  text-transform: uppercase; /* Opcional: Mayúsculas para el texto del botón */
+  letter-spacing: 0.8px; /* Opcional: Espaciado para uppercase */
+}
+
+.actionButton:hover {
+  background-color: #01738f; /* ¡Segundo color de tu gradiente del navbar para el hover! */
+  transform: translateY(-4px); /* Un efecto de elevación un poco más pronunciado */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18); /* Sombra de hover más grande */
+}
+
+.buttonIcon {
+  font-size: 1.3em; /* Ajusta el tamaño del icono dentro del botón */
+}
+
+
+/* --------------------------------------------------------------------- */
+/* --- MEDIA QUERIES PARA RESPONSIVIDAD (Actualizadas) --- */
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .ctaSection {
+    padding: 80px 20px;
   }
-  
-  .boton {
-    background-color: #115763;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 22px 24px;
-    font-weight: bold;
-    font-size: 16px;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  .mainTitle {
+    font-size: 2.5em;
   }
-  
-  .boton:hover {
-    transform: scale(1.2);
+  .mainDescription {
+    font-size: 1.1em;
   }
-  
-  .icono {
-    font-size: 16px;
+  .actionButton {
+    padding: 16px 30px;
+    font-size: 1em;
   }
-  
-  
+  .buttonIcon {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .ctaSection {
+    padding: 60px 15px;
+  }
+  .mainTitle {
+    font-size: 2em;
+  }
+  .mainDescription {
+    font-size: 1em;
+  }
+  .actionButton {
+    width: 100%; /* Botón de ancho completo en móviles */
+    max-width: 280px; /* Limitar el ancho máximo para que no sea demasiado grande */
+    margin: 0 auto; /* Centrar el botón */
+  }
+}
+
+@media (max-width: 576px) {
+  .ctaSection {
+    padding: 50px 10px;
+  }
+  .mainTitle {
+    font-size: 1.8em;
+  }
+  .mainDescription {
+    font-size: 0.9em;
+    margin-bottom: 30px;
+  }
+  .actionButton {
+    padding: 14px 25px;
+    font-size: 0.95em;
+  }
+  .buttonIcon {
+    font-size: 1em;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import cimg from '../../assets/img2ptrs.png'
+import cimg from '../../assets/imgp.png'
 import styles from './Banner.module.css'; // Asegúrate de tener el archivo CSS en la misma carpeta
 
 const Banner = () => {
