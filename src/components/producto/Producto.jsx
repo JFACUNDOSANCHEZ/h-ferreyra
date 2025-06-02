@@ -1,15 +1,12 @@
 import React from 'react'
 import ContactSection from '../contactSection/ContacSection.jsx';
 import cvdo from '../../assets/pdt.mp4';
-import vdopto from '../../assets/vdopto.mp4';
 import Style from './Style.module.css'
 // import ProductoCard from '../ProductoCard/ProductoCard.jsx'
 import Certificaciones from '../certificaciones/Certificaciones.jsx'
-import Banner from '../banner/Banner.jsx';
 import Caracteristicas from '../caracteristicas/Caracteristicas.jsx';
-import Hero from '../hero/hero.jsx'
 import SubscriptionCTA from '../suscripcion/Suscripcion.jsx';
-import ProductShowcase from '../ProductShowcase.jsx/ProductShowcase.jsx';
+
 
 
 export default function Producto() {

@@ -4,243 +4,349 @@
 
 /* --- Estilos Generales de la Página About Us --- */
 .aboutUsPage {
-  font-family: 'Inter', sans-serif;
-  color: #333;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    overflow-x: hidden; /* Evita scroll horizontal por animaciones */
+}
+
+/* --- SECCIONES COMUNES --- */
+.sectionTitle {
+    font-size: 2.8em; /* Ajustado para más impacto */
+    font-weight: 700;
+    color: #1a2c4e;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    text-align: center; /* Centrar títulos de sección */
+}
+
+.sectionSubtitle {
+    font-size: 1.3em; /* Nuevo estilo para subtítulos de sección */
+    color: #666;
+    margin-bottom: 50px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* --- HERO SECTION --- */
 .heroSection {
-  background-color: #e6f2f6; /* Fondo de respaldo si el video no carga */
-  padding: 120px 20px;
-  text-align: center;
-  position: relative; /* ¡CRÍTICO! Para posicionar el video y la superposición */
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 550px; /* Altura mínima para que el video se vea bien */
+    background-color: #e6f2f6; /* Fondo de respaldo si el video no carga */
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px; /* Altura mínima aumentada */
 }
 
 .heroContent {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative; /* Para que esté sobre el video y la superposición */
-  z-index: 2; /* Asegura que el contenido esté por encima del video/overlay */
-  color: white; /* Cambia el color del texto a blanco para contraste */
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* Sombra para mejor legibilidad */
+    max-width: 900px; /* Ancho un poco mayor */
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .heroTitle {
     margin-top: 8rem;
-  font-size: 3.8em;
-  font-weight: 800;
-  color: white; /* Título blanco */
-  margin-bottom: 25px;
-  line-height: 1.2;
+    font-size: 4.2em; /* Más grande */
+    font-weight: 800;
+    color: white;
+    margin-bottom: 25px;
+    line-height: 1.2;
 }
 
 .heroSubtitle {
-  font-size: 1.6em;
-  color: rgba(255, 255, 255, 0.9); /* Subtítulo blanco ligeramente transparente */
-  margin-bottom: 50px;
-  line-height: 1.6;
+    font-size: 1.8em; /* Más grande */
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 50px;
+    line-height: 1.6;
 }
 
-/* --- VIDEO DE FONDO DEL HERO --- */
+/* --- VIDEO DE FONDO DEL HERO (sin cambios significativos) --- */
 .heroVideoBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* Recorta el video si excede el tamaño */
-  z-index: 1; /* Detrás del contenido, pero sobre el fondo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .heroVideo {
-  min-width: 100%; /* Asegura que el video cubra todo el ancho */
-  min-height: 100%; /* Asegura que el video cubra toda la altura */
-  width: auto;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centra el video */
-  object-fit: cover; /* Recorta si es necesario para cubrir el contenedor */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
 .videoOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(3, 130, 161, 0.6); /* Tu azul principal con 60% de opacidad */
-  /* background-color: rgba(0, 0, 0, 0.4); /* Alternativa: un overlay oscuro */
-  z-index: 1; /* Sobre el video, debajo del contenido */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 130, 161, 0.6);
+    z-index: 1;
 }
-
 
 /* --- Botón (sin cambios, ya definido arriba) --- */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 30px;
-  font-weight: bold;
-  font-size: 1.05em;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;
-  white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 30px;
+    font-weight: bold;
+    font-size: 1.05em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
 }
 
 .colorPrimary {
-  background-color: #0382a1;
-  color: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #0382a1;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .colorPrimary:hover {
-  background-color: #01738f;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: #01738f;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btnIcon {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 
-
-/* --- MISIÓN / HISTORIA SECTION (Ahora sin video aquí) --- */
+/* --- MISIÓN / HISTORIA SECTION --- */
 .missionSection {
-  background-color: #ffffff;
-  padding: 100px 20px;
-  text-align: center;
+    background-color: #ffffff;
+    padding: 100px 20px;
+    text-align: center; /* Centrar contenido si es flex-direction column */
 }
 
 .missionContainer {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  align-items: center;
-  justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
 }
 
 .missionContent {
-  flex: 1;
-  min-width: 300px;
-  text-align: left;
-}
-
-.sectionTitle {
-  font-size: 2.5em;
-  font-weight: 700;
-  color: #1a2c4e;
-  margin-bottom: 25px;
-  line-height: 1.2;
+    flex: 1;
+    min-width: 300px;
+    text-align: left; /* Volver a alinear a la izquierda el texto interno */
 }
 
 .sectionText {
-  font-size: 1.1em;
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 20px;
+    font-size: 1.15em; /* Ligeramente más grande */
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
 }
 
-/* Opcional: Si quieres una imagen estática aquí después de quitar el video */
-/*
-.missionImageContainer {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 300px;
+/* --- NUEVA SECCIÓN: ¿POR QUÉ ELEGIRNOS? (DIFERENCIADORES) --- */
+.whyChooseUsSection {
+    background-color: #f0f8ff; /* Fondo ligeramente azul para destacar */
+    padding: 100px 20px;
+    text-align: center;
 }
 
-.missionImage {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
 }
-*/
 
-/* --- SECCIÓN DE VALORES (Sin cambios, es solo de referencia) --- */
+.featureCard {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #eef7ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.featureIcon {
+    font-size: 3.5em; /* Iconos más grandes */
+    color: #0382a1;
+    margin-bottom: 20px;
+}
+
+.featureCard h3 {
+    font-size: 1.5em;
+    color: #1a2c4e;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.featureCard p {
+    font-size: 1.05em;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* --- SECCIÓN DE VALORES --- */
 .valuesSection {
-  background-color: #f8fafd;
-  padding: 80px 20px;
-  text-align: center;
+    background-color: #f8fafd;
+    padding: 80px 20px;
+    text-align: center;
 }
 
 .valuesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
-  margin: 40px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
 }
 
 .valueCard {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  padding: 30px;
-  text-align: left;
-  border: 1px solid #e0e0e0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .valueCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .valueCard h3 {
-  font-size: 1.3em;
-  color: #0382a1;
-  margin-bottom: 10px;
-  font-weight: 700;
+    font-size: 1.3em;
+    color: #0382a1;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .valueCard p {
-  font-size: 1em;
-  color: #666;
-  line-height: 1.6;
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
 }
 
-/* --- CTA FINAL SECTION (Sin cambios, es solo de referencia) --- */
+/* --- NUEVA SECCIÓN: CONOCE A NUESTRO EQUIPO --- */
+.teamSection {
+    background-color: #ffffff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+}
+
+.teamMemberCard {
+    background-color: #ffffff;
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Para centrar contenido */
+    flex-direction: column;
+    align-items: center;
+}
+
+.teamMemberCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.teamMemberImage {
+    width: 150px; /* Tamaño fijo para las imágenes de perfil */
+    height: 150px;
+    border-radius: 50%; /* Hacerlas circulares */
+    object-fit: cover; /* Ajustar imagen */
+    margin-bottom: 20px;
+    border: 4px solid #0382a1; /* Borde de color de la marca */
+    box-shadow: 0 0 0 5px rgba(3, 130, 161, 0.2); /* Efecto halo */
+}
+
+.teamMemberCard h3 {
+    font-size: 1.6em; /* Más grande y prominente */
+    color: #1a2c4e;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.teamMemberRole {
+    font-size: 1.1em;
+    color: #0382a1; /* Color de marca para el rol */
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.teamMemberDescription {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* --- CTA FINAL SECTION --- */
 .finalCtaSection {
-  background-color: #0382a1;
-  padding: 100px 20px;
-  text-align: center;
+    background-color: #0382a1;
+    padding: 100px 20px;
+    text-align: center;
 }
 
 .finalCtaContent {
-  max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .finalCtaTitle {
-  font-size: 3em;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 20px;
-  line-height: 1.2;
+    font-size: 3.2em; /* Ligeramente más grande */
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 .finalCtaSubtitle {
-  font-size: 1.4em;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 40px;
-  line-height: 1.6;
+    font-size: 1.5em; /* Ligeramente más grande */
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 40px;
+    line-height: 1.6;
 }
 
 /* --------------------------------------------------------------------- */
@@ -248,62 +354,96 @@
 /* --------------------------------------------------------------------- */
 
 @media (max-width: 992px) {
-  .heroSection { padding: 90px 20px; min-height: 500px; }
-  .heroTitle { font-size: 3em; }
-  .heroSubtitle { font-size: 1.4em; }
+    .heroSection { padding: 90px 20px; min-height: 550px; }
+    .heroTitle { font-size: 3.5em; }
+    .heroSubtitle { font-size: 1.5em; }
+    .sectionTitle { font-size: 2.5em; }
+    .sectionSubtitle { font-size: 1.1em; margin-bottom: 40px; }
 
-  .missionSection { padding: 80px 20px; }
-  .missionContainer { flex-direction: column; }
-  .missionContent { text-align: center; }
-  .sectionTitle { font-size: 2.2em; }
-  .sectionText { font-size: 1em; }
+    .missionSection { padding: 80px 20px; }
+    .missionContainer { flex-direction: column; }
+    .missionContent { text-align: center; } /* Centrar contenido en pantallas más pequeñas */
+    .sectionText { font-size: 1.05em; }
 
-  .valuesSection { padding: 60px 20px; }
-  .valuesGrid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-  .valueCard { padding: 25px; }
-  .valueCard h3 { font-size: 1.2em; }
+    .whyChooseUsSection { padding: 80px 20px; }
+    .featuresGrid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .featureIcon { font-size: 3em; }
+    .featureCard h3 { font-size: 1.3em; }
 
-  .finalCtaSection { padding: 80px 20px; }
-  .finalCtaTitle { font-size: 2.5em; }
-  .finalCtaSubtitle { font-size: 1.2em; }
+    .valuesSection { padding: 60px 20px; }
+    .valuesGrid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .valueCard { padding: 25px; }
+    .valueCard h3 { font-size: 1.2em; }
+
+    .teamSection { padding: 80px 20px; }
+    .teamGrid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .teamMemberImage { width: 120px; height: 120px; }
+    .teamMemberCard h3 { font-size: 1.4em; }
+    .teamMemberRole { font-size: 1em; }
+
+    .finalCtaSection { padding: 80px 20px; }
+    .finalCtaTitle { font-size: 2.8em; }
+    .finalCtaSubtitle { font-size: 1.3em; }
 }
 
 @media (max-width: 768px) {
-  .heroSection { padding: 70px 15px; min-height: 450px; }
-  .heroTitle { font-size: 2.5em; margin-bottom: 20px; }
-  .heroSubtitle { font-size: 1.2em; margin-bottom: 40px;}
+    .heroSection { padding: 70px 15px; min-height: 500px; }
+    .heroTitle { font-size: 3em; margin-bottom: 20px; }
+    .heroSubtitle { font-size: 1.3em; margin-bottom: 40px;}
+    .sectionTitle { font-size: 2.2em; }
+    .sectionSubtitle { font-size: 1em; margin-bottom: 30px; }
 
-  .missionSection { padding: 60px 15px; }
-  .missionContent { text-align: center; }
-  .sectionTitle { font-size: 2em; }
-  .sectionText { font-size: 0.95em; }
+    .missionSection { padding: 60px 15px; }
+    .sectionText { font-size: 0.95em; }
 
-  .valuesSection { padding: 50px 15px; }
-  .valuesGrid { grid-template-columns: 1fr; max-width: 350px;}
-  .valueCard { text-align: center; }
+    .whyChooseUsSection { padding: 60px 15px; }
+    .featuresGrid { grid-template-columns: 1fr; max-width: 400px; } /* Columnas individuales en móvil */
 
-  .finalCtaSection { padding: 60px 15px; }
-  .finalCtaTitle { font-size: 2em; }
-  .finalCtaSubtitle { font-size: 1em; }
+    .valuesSection { padding: 50px 15px; }
+    .valuesGrid { grid-template-columns: 1fr; max-width: 350px;}
+    .valueCard { text-align: center; }
+
+    .teamSection { padding: 60px 15px; }
+    .teamGrid { grid-template-columns: 1fr; max-width: 400px; } /* Columnas individuales en móvil */
+    .teamMemberImage { width: 100px; height: 100px; }
+    .teamMemberCard h3 { font-size: 1.2em; }
+    .teamMemberRole { font-size: 0.9em; }
+    .teamMemberDescription { font-size: 0.9em; }
+
+    .finalCtaSection { padding: 60px 15px; }
+    .finalCtaTitle { font-size: 2.5em; }
+    .finalCtaSubtitle { font-size: 1.2em; }
 }
 
 @media (max-width: 576px) {
-  .heroSection { padding: 50px 10px; min-height: 400px; }
-  .heroTitle { font-size: 2em; }
-  .heroSubtitle { font-size: 1em; margin-bottom: 30px;}
-  .btn { padding: 14px 25px; font-size: 0.95em; }
+    .heroSection { padding: 50px 10px; min-height: 450px; }
+    .heroTitle { font-size: 2.5em; }
+    .heroSubtitle { font-size: 1.1em; margin-bottom: 30px;}
+    .btn { padding: 14px 25px; font-size: 0.95em; }
+    .sectionTitle { font-size: 1.8em; }
+    .sectionSubtitle { font-size: 0.9em; margin-bottom: 25px; }
 
-  .missionSection { padding: 40px 10px; }
-  .sectionTitle { font-size: 1.8em; }
-  .sectionText { font-size: 0.9em; }
+    .missionSection { padding: 40px 10px; }
+    .sectionText { font-size: 0.9em; }
 
-  .valuesSection { padding: 40px 10px; }
-  .valuesGrid { gap: 20px; }
-  .valueCard { padding: 20px; }
-  .valueCard h3 { font-size: 1.1em; }
-  .valueCard p { font-size: 0.9em; }
+    .whyChooseUsSection { padding: 40px 10px; }
+    .featureIcon { font-size: 2.5em; }
+    .featureCard h3 { font-size: 1.2em; }
+    .featureCard p { font-size: 0.95em; }
 
-  .finalCtaSection { padding: 40px 10px; }
-  .finalCtaTitle { font-size: 1.8em; }
-  .finalCtaSubtitle { font-size: 0.9em; }
+    .valuesSection { padding: 40px 10px; }
+    .valuesGrid { gap: 20px; }
+    .valueCard { padding: 20px; }
+    .valueCard h3 { font-size: 1.1em; }
+    .valueCard p { font-size: 0.9em; }
+
+    .teamSection { padding: 40px 10px; }
+    .teamMemberImage { width: 80px; height: 80px; }
+    .teamMemberCard h3 { font-size: 1.1em; }
+    .teamMemberRole { font-size: 0.85em; }
+    .teamMemberDescription { font-size: 0.85em; }
+
+    .finalCtaSection { padding: 40px 10px; }
+    .finalCtaTitle { font-size: 2em; }
+    .finalCtaSubtitle { font-size: 1em; }
 }
