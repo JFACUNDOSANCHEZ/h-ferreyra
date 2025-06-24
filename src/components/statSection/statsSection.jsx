@@ -11,7 +11,7 @@ import {
   // Podrías añadir más iconos específicos si los necesitas para otras estadísticas
 } from 'react-icons/fa';
 
-import styles from './StatsSection.module.css';
+import styles from './statsSection.module.css';
 
 const stats = [
   { icon: <FaCloud />, value: 300, suffix: 'K', text: 'Estudios en Nube' }, // Texto más conciso
