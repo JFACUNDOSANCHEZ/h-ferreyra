@@ -1,6 +1,6 @@
 // src/components/SolutionsSection.jsx
 import styles from './SolutionsSection.module.css';
-import videoBg from '../../assets/vdoptrs.mp4';
+
 const solutions = [
   {
     title: ' Tomografía Computada',
