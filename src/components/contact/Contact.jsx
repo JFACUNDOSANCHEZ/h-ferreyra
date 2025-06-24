@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import styles from './Contact.module.css';
 import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 import { Fade } from 'react-awesome-reveal';
-import vdocnt from '../../assets/vdocnt.mp4';
+// import vdocnt from '../../assets/vdocnt.mp4';
+import cvdo from '../../assets/pdt.mp4';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -34,7 +36,7 @@ const Contact = () => {
           loop
           playsInline
         >
-          <source src={vdocnt} type="video/mp4" />         Tu navegador no soporta la etiqueta de video.
+          <source src={cvdo} type="video/mp4" />         Tu navegador no soporta la etiqueta de video.
         </video>
         <div className={styles.overlay}></div>
         <div className={styles.heroContent}>

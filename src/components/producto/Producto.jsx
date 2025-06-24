@@ -9,6 +9,7 @@ import SubscriptionCTA from '../suscripcion/Suscripcion.jsx';
 
 
 
+
 export default function Producto() {
   return (
     <div className={Style.vmContainer}>
@@ -32,11 +33,6 @@ export default function Producto() {
 <ContactSection/>
 
 
-
-
-            {/* <ProductoCard/> */}
-{/* <Hero></Hero> */}
-            {/* <Banner></Banner> */}
             <Certificaciones></Certificaciones>
     </div>
   )

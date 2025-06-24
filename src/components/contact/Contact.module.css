@@ -7,57 +7,73 @@
   font-family: 'Inter', sans-serif;
   color: #333;
 }
-.videoBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  opacity: 0.25; /* Ajusta esto si querés oscurecer o aclarar el video */
-  pointer-events: none; /* Para que no interfiera con clics */
-}
 
 /* --- HERO SECTION --- */
 .heroSection {
-  background-color: #e6f2f6; /* Azul claro consistente */
+  /* background-color: rgb(3, 129, 161); // Esto será cubierto por el overlay y el video */
+  background-color: rgba(3, 130, 161, 0.6); /* Color de fondo que se mezcla con el video oscurecido */
   padding: 120px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 600px; /* Vuelve a un tamaño más compacto */
+  flex-direction: column; /* Mantén esto si el contenido es vertical */
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  min-height: 800px; /* Altura controlada, igual que en Producto */
+  height: 800px; /* Altura fija si lo deseas consistente */
+  color: white; /* Color de texto general para la sección */
 }
+
+.videoBackground {
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%); /* Ajuste para el centrado */
+  z-index: 1; /* Encima del heroSection, debajo del overlay y texto */
+  pointer-events: none;
+  filter: brightness(0.4) saturate(0.8) blur(1px); /* Filtro para oscurecer y difuminar */
+}
+
+.overlay {
+  position: absolute;
+  inset: 0; /* top:0, right:0, bottom:0, left:0 */
+  z-index: 2; /* Encima del video */
+  background: rgba(3, 130, 161, 0.6); /* Capa de color translúcida */
+}
+
 
 .heroContent {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
-  z-index: 2;
-  color: #1a2c4e; /* Texto oscuro sobre fondo claro */
+  z-index: 4; /* **El texto DEBE estar en la capa superior** */
+  color: #e0f2ff; /* Un blanco azulado para el texto principal */
+  text-align: center;
 }
 
 .heroTitle {
-    margin-top: 4rem;
+  margin-top: 4rem; /* Ajusta si es necesario, 10rem en Producto.css es mucho */
   font-size: 3.8em;
   font-weight: 800;
-  color: #1a2c4e;
+  color: #e0f2ff; /* Color del título */
   margin-bottom: 25px;
   line-height: 1.2;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para el texto */
 }
 
 .heroSubtitle {
   font-size: 1.6em;
-  color: #4a5a6a;
-  margin-bottom: 0; /* Sin margen inferior si no hay botón debajo */
+  color: #c9e6ff; /* Color del subtítulo */
+  margin-bottom: 0;
   line-height: 1.6;
+  opacity: 0.9;
 }
 
-/* --- Botón (reutilizado de componentes anteriores) --- */
+/* --- Botón (reutilizado) --- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -91,27 +107,26 @@
   font-size: 1.2em;
 }
 
-/* --- SECCIÓN DE INFORMACIÓN Y FORMULARIO (NUEVA CLASE) --- */
+/* --- SECCIÓN DE INFORMACIÓN Y FORMULARIO --- */
 .infoFormSection {
-  background-color: #f8fafd; /* Fondo ligero */
   padding: 80px 20px;
 }
 
-.infoFormContainer { /* Contenedor flex para las dos columnas */
+.infoFormContainer {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap; /* Permite que las columnas se apilen */
-  gap: 40px; /* Espacio entre columnas */
-  justify-content: center; /* Centra las columnas si no llenan el ancho */
-  align-items: flex-start; /* Alinea los ítems al inicio del contenedor */
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .contactInfo,
-.mailFormContainer { /* Ambas columnas */
-  flex: 1; /* Ocupan espacio flexible */
-  min-width: 1200px;
-  max-width: 1200px; /* Ancho mínimo para cada columna */
+.mailFormContainer {
+  flex: 1;
+  flex-basis: calc(50% - 20px);
+  max-width: 580px;
   padding: 30px;
   background-color: #ffffff;
   border-radius: 12px;
@@ -122,13 +137,13 @@
   text-align: left;
 }
 
-.sectionTitleSmall { /* Título más pequeño para subsecciones */
+.sectionTitleSmall {
   font-size: 2em;
   font-weight: 700;
   color: #1a2c4e;
   margin-bottom: 25px;
   line-height: 1.2;
-  text-align: left; /* Alineado a la izquierda */
+  text-align: left;
 }
 
 .infoText {
@@ -138,27 +153,25 @@
   margin-bottom: 30px;
 }
 
-.contactDetailsGrid { /* Contenedor flex para los detalles de mail y dirección */
-  display: flex;
-  flex-direction: column; /* Apila los detalles */
-  gap: 20px;
-  /* margin-bottom: ya no se necesita aquí si los detalles están dentro */
-}
-
 .contactDetail {
   display: flex;
-  align-items: flex-start; /* Alinea ícono y texto al inicio */
+  align-items: flex-start;
   text-align: left;
+  margin-bottom: 20px;
+}
+
+.contactDetail:last-child {
+  margin-bottom: 0;
 }
 
 .contactDetail .icon {
-  font-size: 2em; /* Íconos más grandes */
-  color: #0382a1; /* Tu azul principal */
+  font-size: 2em;
+  color: #0382a1;
   margin-right: 20px;
-  flex-shrink: 0; /* Evita que el ícono se encoja */
+  flex-shrink: 0;
 }
 
-.detailTitle { /* Título para Correo Electrónico / Nuestra Ubicación */
+.detailTitle {
   font-size: 1.3em;
   font-weight: 700;
   color: #1a2c4e;
@@ -173,17 +186,17 @@
 }
 
 .contactLink:hover {
-  color: #0382a1; /* Hover en el link */
+  color: #0382a1;
 }
 
-/* --- FORMULARIO DE MAILTO (Nuevo) --- */
+/* --- FORMULARIO DE MAILTO --- */
 .mailFormContainer {
-  text-align: left; /* Alinea el contenido del formulario a la izquierda */
+  text-align: left;
 }
 
 .mailForm {
   display: flex;
-  flex-direction: column; /* Apila los elementos del formulario */
+  flex-direction: column;
 }
 
 .formGroup {
@@ -208,33 +221,33 @@
   font-size: 1em;
   color: #333;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box; /* Incluye padding y border en el width */
+  box-sizing: border-box;
 }
 
 .formInput:focus,
 .formTextarea:focus {
   border-color: #0382a1;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(3, 130, 161, 0.2); /* Sombra suave al enfocar */
+  box-shadow: 0 0 0 3px rgba(3, 130, 161, 0.2);
 }
 
 .formTextarea {
-  resize: vertical; /* Permite redimensionar verticalmente */
+  resize: vertical;
 }
 
-.mailForm .btn { /* Estilo para el botón del formulario, alineado a la izquierda */
-  align-self: flex-start; /* Alinea el botón a la izquierda */
+.mailForm .btn {
+  align-self: flex-start;
   margin-top: 15px;
 }
 
-/* --- SECCIÓN DE MAPA DE ANCHO COMPLETO (Sin cambios importantes) --- */
-.fullWidthMapSection { /* Nueva clase de sección */
-  padding: 80px 0; /* Padding vertical, 0 horizontal para que ocupe todo el ancho */
-  background-color: #ffffff; /* Fondo blanco */
-  text-align: center; /* Centra el título del mapa */
+/* --- SECCIÓN DE MAPA DE ANCHO COMPLETO --- */
+.fullWidthMapSection {
+  padding: 80px 0;
+  background-color: #ffffff;
+  text-align: center;
 }
 
-.sectionTitle { /* Título principal de sección, reutilizado para el mapa */
+.sectionTitle {
   font-size: 2.5em;
   font-weight: 700;
   color: #1a2c4e;
@@ -242,18 +255,18 @@
   line-height: 1.2;
 }
 
-.mapContainerFullWidth { /* Nuevo contenedor para el iframe */
-  width: 100%; /* Ocupa todo el ancho */
-  max-width: 100%; /* Asegura que no se desborde */
-  margin: 40px auto 0 auto; /* Centra y da espacio */
+.mapContainerFullWidth {
+  width: 100%;
+  max-width: 100%;
+  margin: 40px auto 0 auto;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  border-radius: 0; /* Sin border-radius para ancho completo */
+  border-radius: 0;
 }
 
 .mapContainerFullWidth iframe {
   width: 100%;
-  height: 550px; /* Altura más grande para un mapa de ancho completo */
+  height: 550px;
   border: none;
   display: block;
 }
@@ -263,21 +276,29 @@
 /* --------------------------------------------------------------------- */
 
 @media (max-width: 992px) {
-  .heroSection { padding: 90px 15px; min-height: 300px; }
+  .heroSection {
+    padding: 90px 15px;
+    min-height: 300px;
+    height: 600px; /* Ajusta la altura para móviles */
+  }
   .heroTitle { font-size: 3em; }
   .heroSubtitle { font-size: 1.4em; }
 
   .infoFormSection { padding: 60px 15px; }
-  .infoFormContainer { flex-direction: column; gap: 30px; } /* Apila columnas */
+  .infoFormContainer { flex-direction: column; gap: 30px; }
   .contactInfo,
-  .mailFormContainer { padding: 25px; min-width: unset; max-width: 500px; margin: 0 auto; } /* Centra en móvil */
+  .mailFormContainer {
+    padding: 25px;
+    min-width: unset;
+    max-width: 500px;
+    margin: 0 auto;
+    flex-basis: auto;
+  }
   .sectionTitleSmall { font-size: 1.8em; margin-bottom: 20px;}
   .infoText { font-size: 1em; margin-bottom: 25px;}
 
-  .contactDetail { flex-direction: column; align-items: flex-start; } /* Ícono arriba del texto en móvil */
+  .contactDetail { flex-direction: column; align-items: flex-start; }
   .contactDetail .icon { margin-right: 0; margin-bottom: 10px; font-size: 1.8em;}
-  .detailTitle { text-align: left; }
-  .contactLink, .contactText { text-align: left; }
 
   .formLabel { font-size: 0.9em; margin-bottom: 6px;}
   .formInput, .formTextarea { padding: 10px 12px; font-size: 0.95em;}
@@ -289,7 +310,11 @@
 }
 
 @media (max-width: 768px) {
-  .heroSection { padding: 70px 10px; min-height: 250px; }
+  .heroSection {
+    padding: 70px 10px;
+    min-height: 250px;
+    height: 500px; /* Ajusta la altura para móviles */
+  }
   .heroTitle { font-size: 2.5em; }
   .heroSubtitle { font-size: 1.2em; }
 
@@ -312,7 +337,11 @@
 }
 
 @media (max-width: 576px) {
-  .heroSection { padding: 50px 10px; min-height: 200px; }
+  .heroSection {
+    padding: 50px 10px;
+    min-height: 200px;
+    height: 450px; /* Ajusta la altura para móviles */
+  }
   .heroTitle { font-size: 2em; }
   .heroSubtitle { font-size: 1em; }
 

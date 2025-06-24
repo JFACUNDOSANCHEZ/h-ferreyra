@@ -1,4 +1,4 @@
-/* src/components/Producto/Style.module.css */
+  /* src/components/Producto/Style.module.css */
 
 .vmContainer {
 
@@ -12,12 +12,12 @@
 .heroSection {
 
   position: relative;
-  height: 700px; /* Una altura fija para un diseño controlado */
+  height: 800px; /* Una altura fija para un diseño controlado */
   display: flex;
   align-items: center; /* Centra el contenido verticalmente */
   justify-content: center; /* Centra el contenido horizontalmente (para el texto) */
   overflow: hidden;
-  background-color: #0d1a2f; /* Un color de fondo muy oscuro para que el video oscurecido se mezcle */
+  background-color:rgba(3, 130, 161, 0.6); /* Un color de fondo muy oscuro para que el video oscurecido se mezcle */
   color: white; /* Color de texto general para la sección */
 }
 
@@ -38,7 +38,7 @@
   inset: 0;
   z-index: 2; /* Encima del video */
   /* Capa de "niebla" translúcida. Puedes ajustar el color y la opacidad */
-  background: rgba(13, 26, 47, 0.7); /* Azul muy oscuro con 70% de opacidad */
+  background: rgba(3, 130, 161, 0.6); /* Azul muy oscuro con 70% de opacidad */
   /* Si quieres un efecto más blanco/claro:
   background: rgba(255, 255, 255, 0.15); // Blanco muy transparente
   background: rgba(0, 123, 255, 0.1); // Azul primario muy transparente
