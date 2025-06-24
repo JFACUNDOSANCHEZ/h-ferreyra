@@ -10,7 +10,7 @@ import Contact from './components/contact/Contact'
 function App() {
   return (
     <Router>
-      <Navbar></Navbar>
+      <Nav></Nav>
       <Routes>
         <Route path="/" element={<Home />} />
        <Route path="/vmcloud" element={<Producto />} /> *
