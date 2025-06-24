@@ -10,9 +10,8 @@
 }
 
 .heroSection {
-
   position: relative;
-  height: 800px; /* Una altura fija para un diseño controlado */
+  height: 801px; /* Una altura fija para un diseño controlado */
   display: flex;
   align-items: center; /* Centra el contenido verticalmente */
   justify-content: center; /* Centra el contenido horizontalmente (para el texto) */
