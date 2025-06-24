@@ -5,7 +5,7 @@ import { FaTwitter, FaYoutube, FaWhatsapp } from 'react-icons/fa';
 // Asumo que trsi.png es el logo principal para el navbar, no para el preNav
 import trsi from '../../assets/trsi.png'; // Asegúrate de que la ruta sea correcta
 
-export default function Navbar() {
+export default function nav() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {

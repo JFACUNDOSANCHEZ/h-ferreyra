@@ -1,5 +1,5 @@
 // src/pages/Home.jsx
-import Nav from '../Nav/nav'
+import Nav from '../Nav/Nav'
 import SolutionsSection from '../solutions/Solutions'
 import StatsSection from '../statSection/statsSection'
 import Certificaciones from '../certificaciones/Certificaciones'

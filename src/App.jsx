@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './components/home/Home'
 import Producto from './components/producto/Producto'
-import Navbar from './components/Nav/nav'
+import Nav from './components/Nav/Nav.jsx'
 import Footer from './components/footer/Footer'
 import WhatsappButton from './components/whatsapp/WhatsappButton.jsx'
 import AboutUs from './components/aboutUs/AboutUs'
