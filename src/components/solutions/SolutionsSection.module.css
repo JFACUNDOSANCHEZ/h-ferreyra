@@ -50,7 +50,7 @@
 .subtitle.is_visible,
 .card.is_visible {
   opacity: 1; /* Completamente visible */
-  transform: translateY(0); /* Vuelve a su posición original */
+  transform: translateY(0.8s); /* Vuelve a su posición original */
 }
 
 /* --- Retrasos de transición específicos para los elementos individuales --- */
@@ -101,13 +101,13 @@
   width: 280px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el hover */
+  /* transition: transform 0.s ease, box-shadow 0.3s ease; Transición para el hover */
   border: 1px solid #e0e0e0;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    /* transform: translateY(-8px); */
+    box-shadow: 0 12px 24px rgba(2, 95, 111, 0.3); /* Valor original en tu primer envío, luego lo cambiaste a 0.715 */
 }
 
 .cardImage {
