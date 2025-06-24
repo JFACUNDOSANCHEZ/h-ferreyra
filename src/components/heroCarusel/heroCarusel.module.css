@@ -15,6 +15,8 @@
   align-items: center;
   justify-content: flex-start;
   isolation: isolate;
+  /* Asegura que el contenido esté oculto antes de la animación si es necesario */
+  /* overflow: hidden;  Esto puede ser útil si los elementos empiezan fuera del slide */
 }
 
 .slide::before {
@@ -40,6 +42,8 @@
   max-width: 600px;
   margin-left: 5%;
   margin-top: 19rem; /* Mantén este margen si es parte de tu diseño */
+  /* Establecer opacidad inicial a 0 para que la animación la cambie a 1 */
+  /* Aunque 'forwards' en la animación ayuda, es buena práctica si la animación no se dispara por JS */
 }
 
 /* --- TÍTULO DEL CARRUSEL (H2) - Adaptado del h2 de .subscriptionContent --- */
@@ -49,14 +53,24 @@
   margin-bottom: 25px; /* Ajustado para consistencia, era 1rem */
   line-height: 1.2; /* Para consistencia */
   font-weight: 700; /* MISMO PESO QUE EL H2 DE .subscriptionContent */
+
+  /* Animación */
+  opacity: 0; /* Empieza invisible */
+  animation: fadeInSlideUp 1s ease-out forwards; /* Aplica la animación definida abajo */
+  animation-delay: 0.2s; /* Retraso para que aparezca después de que el slide se cargue */
 }
 
-/* --- PÁRRAFO DEL CARRUSEL (P) - Adaptado del .subtitle de Suscripcion --- */
+/* --- PÁRRÁFO DEL CARRUSEL (P) - Adaptado del .subtitle de Suscripcion --- */
 .overlay p {
   font-size: 1.3em; /* MISMO TAMAÑO QUE EL .subtitle DE SUSCRIPCION */
   color: #555; /* MISMO COLOR QUE EL .subtitle DE SUSCRIPCION */
   margin-bottom: 40px; /* Ajustado para consistencia, era 1rem */
   line-height: 1.6; /* Para consistencia */
+
+  /* Animación */
+  opacity: 0; /* Empieza invisible */
+  animation: fadeInSlideUp 1s ease-out forwards;
+  animation-delay: 0.5s; /* Retraso mayor para que aparezca después del título */
 }
 
 /* --- BOTÓN DEL CARRUSEL - Adaptado de .btn .colorPrimary de Suscripcion --- */
@@ -72,12 +86,31 @@
   /* Agregamos las transiciones y sombra para que se vea como los otros botones */
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+  /* Animación */
+  opacity: 0; /* Empieza invisible */
+  animation: fadeInSlideUp 1s ease-out forwards;
+  animation-delay: 0.8s; /* Retraso aún mayor para que aparezca después de la descripción */
 }
 
 .overlay button:hover {
   background-color: #0056b3; /* Color de hover de .colorPrimary */
   transform: translateY(-3px); /* Efecto de hover de .colorPrimary */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Sombra de hover de .colorPrimary */
+}
+
+/* --------------------------------------------------------------------- */
+/* --- DEFINICIÓN DE LA ANIMACIÓN KEYFRAMES (Va al final de tu CSS) --- */
+/* --------------------------------------------------------------------- */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Empieza 20px más abajo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Termina en su posición original */
+  }
 }
 
 /* --------------------------------------------------------------------- */

@@ -1,3 +1,5 @@
+/* src/components/SolutionsSection.module.css */
+
 .solutionsWrapper {
   margin-top: 5rem;
   position: relative;
@@ -24,33 +26,64 @@
       rgba(255, 255, 255, 0.761),
       rgba(255, 255, 255, 0.759)
     );
-    /* url('https://img.freepik.com/fotos-premium/distribucion-datos-red-fondo-digital-transferencia-informacion-representacion-3d_745045-78.jpg') no-repeat center center; */
+  /* url('https://img.freepik.com/fotos-premium/distribucion-datos-red-fondo-digital-transferencia-informacion-representacion-3d_745045-78.jpg') no-repeat center center; */
   background-size: cover;
   text-align: center;
-  /* --- APLICAMOS LA MISMA FUENTE GENERAL DE SUSCRIPCION --- */
-  font-family: 'Inter', sans-serif; /* Fuente de .subscriptionSection */
+  font-family: 'Inter', sans-serif;
   z-index: 1;
 }
 
+/* --- ESTADO INICIAL (oculto y desplazado) para todos los elementos animados --- */
+.title,
+.subtitle,
+.card {
+  opacity: 0; /* Totalmente transparente al inicio */
+  transform: translateY(30px); /* Empieza 30px abajo de su posición final */
+  /* Define la transición para que el cambio de estado sea animado */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  /* El transition-delay se manejará por clases individuales o inline en JSX */
+}
+
+/* --- ESTADO VISIBLE (cuando la clase 'is_visible' se añade por JavaScript) --- */
+/* Se utiliza `is_visible` para que no choque con otras posibles clases */
+.title.is_visible,
+.subtitle.is_visible,
+.card.is_visible {
+  opacity: 1; /* Completamente visible */
+  transform: translateY(0); /* Vuelve a su posición original */
+}
+
+/* --- Retrasos de transición específicos para los elementos individuales --- */
+/* Estos se aplican solo cuando la clase is_visible está presente */
+.title.is_visible {
+  transition-delay: 0.2s; /* El título aparece 0.2s después de que la sección sea visible */
+}
+
+.subtitle.is_visible {
+  transition-delay: 0.5s; /* El subtítulo aparece 0.5s después de que la sección sea visible */
+}
+
+/* El transition-delay para .card.is_visible se aplica dinámicamente en el JSX
+   para crear el efecto escalonado entre las tarjetas. */
+
 /* --- TÍTULO PRINCIPAL - Adaptado del h2 de .subscriptionContent --- */
 .title {
-  font-size: 3.2em; /* MISMO TAMAÑO QUE EL H2 DE .subscriptionContent */
-  font-weight: 700; /* MISMO PESO QUE EL H2 DE .subscriptionContent */
-  color: #16283F; /* MISMO COLOR QUE EL H2 DE .subscriptionContent (era #192124) */
-  margin-bottom: 25px; /* Ajustado para consistencia (era 10px) */
-  line-height: 1.2; /* Para consistencia */
-  /* La font-family ya la hereda de .solutionsSection, no es necesario repetirla */
+  font-size: 3.2em;
+  font-weight: 700;
+  color: #16283F;
+  margin-bottom: 25px;
+  line-height: 1.2;
 }
 
 /* --- SUBTÍTULO PRINCIPAL - Adaptado del .subtitle de Suscripcion --- */
 .subtitle {
-  font-size: 1.3em; /* MISMO TAMAÑO QUE EL .subtitle DE SUSCRIPCION (era 1.3rem) */
-  color: #555; /* MISMO COLOR QUE EL .subtitle DE SUSCRIPCION (era #115763) */
+  font-size: 1.3em;
+  color: #555;
   margin-bottom: 40px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6; /* Para consistencia */
+  line-height: 1.6;
 }
 
 .cardsContainer {
@@ -68,7 +101,7 @@
   width: 280px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el hover */
   border: 1px solid #e0e0e0;
 }
 
@@ -90,22 +123,19 @@
 
 /* --- TÍTULO DE CADA TARJETA - Adaptado del h3 de .benefitItem --- */
 .cardTitle {
-  font-weight: 600; /* MISMO PESO QUE .benefitItem h3 (era 700) */
-  font-size: 1.4em; /* MISMO TAMAÑO QUE .benefitItem h3 (era 1.1rem) */
-  color: #2c3e50; /* MISMO COLOR QUE .benefitItem h3 (era #0382a1) */
+  font-weight: 600;
+  font-size: 1.4em;
+  color: #2c3e50;
   margin-bottom: 10px;
-  line-height: 1.2; /* Para consistencia */
-  /* La font-family ya la hereda de .solutionsSection, no es necesario repetirla */
+  line-height: 1.2;
 }
 
 /* --- TEXTO DE CADA TARJETA - Adaptado del p de .benefitItem --- */
 .cardText {
-  font-size: 0.95em; /* MISMO TAMAÑO QUE .benefitItem p (era 0.95rem) */
-  color: #666; /* MISMO COLOR QUE .benefitItem p (era #444) */
-  line-height: 1.6; /* Para consistencia (era 1.5) */
-  /* La font-family ya la hereda de .solutionsSection, no es necesario repetirla */
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.6;
 }
-
 
 /* --------------------------------------------------------------------- */
 /* --- MEDIA QUERIES PARA RESPONSIVIDAD (Ajustadas para Soluciones) --- */
@@ -113,49 +143,49 @@
 
 @media (max-width: 992px) {
   .title {
-    font-size: 2.8em; /* Mismo que h2 de Suscripcion en móvil */
+    font-size: 2.8em;
   }
   .subtitle {
-    font-size: 1.1em; /* Mismo que .subtitle de Suscripcion en móvil */
+    font-size: 1.1em;
   }
   .cardTitle {
-    font-size: 1.2em; /* Ajuste para tarjeta en móvil */
+    font-size: 1.2em;
   }
   .cardText {
-    font-size: 0.9em; /* Ajuste para tarjeta en móvil */
+    font-size: 0.9em;
   }
 }
 
 @media (max-width: 768px) {
   .title {
-    font-size: 2.2em; /* Mismo que h2 de Suscripcion en móvil más pequeño */
+    font-size: 2.2em;
   }
   .subtitle {
-    font-size: 1em; /* Mismo que .subtitle de Suscripcion en móvil más pequeño */
+    font-size: 1em;
   }
   .cardTitle {
-    font-size: 1.1em; /* Ajuste para tarjeta en móvil más pequeño */
+    font-size: 1.1em;
   }
   .cardText {
-    font-size: 0.85em; /* Ajuste para tarjeta en móvil más pequeño */
+    font-size: 0.85em;
   }
 }
 
 @media (max-width: 576px) {
   .title {
-    font-size: 1.8em; /* Mismo que h2 de Suscripcion en móvil muy pequeño */
+    font-size: 1.8em;
   }
   .subtitle {
-    font-size: 0.9em; /* Mismo que .subtitle de Suscripcion en móvil muy pequeño */
+    font-size: 0.9em;
   }
   .card {
-    width: 100%; /* Las tarjetas ocupan el ancho completo en móviles muy pequeños */
-    max-width: 280px; /* Para que no se estiren demasiado en pantallas un poco más grandes */
+    width: 100%;
+    max-width: 280px;
   }
   .cardTitle {
-    font-size: 1em; /* Ajuste para tarjeta en móvil muy pequeño */
+    font-size: 1em;
   }
   .cardText {
-    font-size: 0.8em; /* Ajuste para tarjeta en móvil muy pequeño */
+    font-size: 0.8em;
   }
 }

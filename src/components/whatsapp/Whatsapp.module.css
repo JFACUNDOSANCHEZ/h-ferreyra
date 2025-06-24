@@ -1,7 +1,10 @@
+/* Whatsapp.module.css */
+
 .whatsappButton {
   position: fixed;
-  bottom: 40px;
-  right:40px;
+  /* CAMBIA ESTE VALOR PARA MOVERLO MÁS ARRIBA */
+  bottom: 70px; 
+  right: 40px;
   background-color: #25d366;
   color: white;
   border-radius: 50%;
@@ -13,9 +16,26 @@
   z-index: 1000;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease; 
+
+  /* Animación (mantenerla como está) */
+  opacity: 0; 
+  transform: translateY(20px); 
+  animation: fadeInSlideUp 0.8s ease-out forwards; 
+  animation-delay: 1s; 
 }
 
 .whatsappButton:hover {
   transform: scale(1.1);
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); 
+  }
 }
