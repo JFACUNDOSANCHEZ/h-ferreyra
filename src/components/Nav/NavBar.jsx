@@ -1,5 +1,5 @@
 // src/components/Navbar/Navbar.jsx
-import styles from './NavBar.module.css';
+import styles from './Nav.module.css';
 import { useEffect, useState } from 'react';
 import { FaTwitter, FaYoutube, FaWhatsapp } from 'react-icons/fa';
 // Asumo que trsi.png es el logo principal para el navbar, no para el preNav

@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from '../src/components/home/Home'
 import Producto from '../src/components/producto/Producto'
-import Nav from './components/Nav/Nav.jsx'
+import NavBar from './components/Nav/NavBar.jsx'
 import Footer from '../src/components/footer/Footer'
 import WhatsappButton from '../src/components/whatsapp/WhatsappButton.jsx'
 import AboutUs from './components/aboutUs/AboutUs'
@@ -10,7 +10,7 @@ import Contact from './components/contact/Contact'
 function App() {
   return (
     <Router>
-      <Nav />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
        <Route path="/vmcloud" element={<Producto />} /> *
