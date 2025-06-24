@@ -1,6 +1,6 @@
 // src/components/SubscriptionCTA/SubscriptionCTA.jsx
 import React from 'react';
-import styles from './suscripcion.module.css'; // Importa los estilos como un objeto
+import styles from './Suscripcion.module.css'; // Importa los estilos como un objeto
 import vdopto from '../../assets/vdopto.mp4';
 
 // Importa los iconos de react-icons/fa
